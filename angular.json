@@ -79,6 +79,8 @@
             "aot": false,
             "assets": [
               "projects/demo/src/favicon.ico",
+              "projects/demo/src/assets/config/default.json",
+              "projects/demo/src/assets/config/dynamicConfig.json",
               "projects/demo/src/assets"
             ],
             "styles": [

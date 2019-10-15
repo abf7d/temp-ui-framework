@@ -15,7 +15,7 @@ export class APIService {
         return new BehaviorSubject<string>('myappid');
     }
     getDynamicConfig(id): Observable<any> {
-        return this._http.get('./config/dynamicConfig.json');
+        return this._http.get('./assets/config/dynamicConfig.json');
 
     }
 }

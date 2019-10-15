@@ -25,7 +25,7 @@ export class RoutingConfigService {
     }
 
     getConfig(): Observable<any> {
-        return this._http.get('./config/' + this._env + '.json');
+        return this._http.get('./assets/config/' + this._env + '.json');
 
     }
 

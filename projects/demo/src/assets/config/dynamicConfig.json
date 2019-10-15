@@ -5,14 +5,14 @@
             "name": "LsHeaderComponent",
             "config": {
                 "style": {},
-                "logo": "http://localhost:8080/ui/assets/polus-logo.png",
+                "logo": "/assets/polus-logo.png",
                 "leftNavList": [
                     { "text": "one", "type":"text" },
-                    { "text": "two", "type":"img", "src":"http://localhost:8080/ui/assets/eye.png" },
-                    { "text": "three", "type":"ico", "src":"http://localhost:8080/ui/assets/zoom.png" }
+                    { "text": "two", "type":"img", "src":"/assets/eye.png" },
+                    { "text": "three", "type":"ico", "src":"/assets/zoom.png" }
                 ],
                 "rightNavList": [
-                    { "text": "search-click", "type":"btn", "src":"http://localhost:8080/ui/assets/zoom.png" },
+                    { "text": "search-click", "type":"btn", "src":"/assets/zoom.png" },
                     { "text": "one", "type":"text" },
                     { "text": "two", "type":"text" },
                     { "text": "menu", "type":"menu", 
@@ -27,8 +27,8 @@
                 ]
                 , "centerNavList": [
                     { "text": "one", "type":"text" },
-                    { "text": "two", "type":"img", "src":"http://localhost:8080/ui/assets/rect.png" },
-                    { "text": "menu", "type":"img", "src":"http://localhost:8080/ui/assets/poly.png"  }
+                    { "text": "two", "type":"img", "src":"/assets/rect.png" },
+                    { "text": "menu", "type":"img", "src":"/assets/poly.png"  }
                 ]
             }
         }

@@ -1,0 +1,130 @@
+@import "../../../../assets/variables.scss";
+* {color: $main-text-color}
+
+.local-footer {
+   height: 40px;
+   background-color: $main-container-color;
+}
+.main-content {
+   flex: 1;
+}
+.inner-Main {
+   background-color: $secondary-container-color; // #191919
+}
+/* margins */
+.local-footer {
+   margin: 2px 0 0 0;
+   border: 1px solid $color-border; // black;
+   border-bottom: none;
+}
+
+/* color */
+.main-content {
+   background-color: $secondary-container-color; //#191919;
+}
+.action-buttons {
+   background-color: $secondary-container-color;
+   height: 34px;
+   display: flex;
+   justify-content: space-between;
+   margin-top: 3px;
+}
+.action-buttons > div {
+   align-items: center;
+}
+.left-action {
+   display: flex;
+}
+.center-action, .center-action > div {
+   display: flex;
+}
+
+.left-action {
+   margin-left: 10px;
+}
+.action-buttons img {
+   width: 35px;
+   margin: 0px 3px 0px 3px;
+}
+.file-name-title {
+   margin-left: 15px;
+}
+
+.center-action > div {
+   margin: 0 15px 0 15px;
+
+}
+.center-action img, .center-action select {
+   margin: 0 3px 0 3px;
+}
+.center-action button {
+   margin: 0 3px 0 5px;
+   padding: 0 17px 0 17px;
+}
+.center-action select {
+   padding: 0 0 0 8px;
+}
+select, button {
+   background-color: $input-background;
+   border-radius: 4px;
+   font-size: 14px;
+   border-color: $light-accent-color;
+   color: $light-accent-color;
+   font-weight:bold;
+}
+button {
+   border: 1px solid $light-accent-color;
+    padding: 0 3px 0 3px
+
+}
+
+
+.local-footer {
+   display: flex;
+   align-items: center;
+}
+.local-footer > div {
+   padding: 4px 30px 4px 30px;
+   border: 1px solid black;
+   display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.local-footer > div.active {
+   background-color: $drawer-color;
+   border-bottom:none;
+}
+
+.drawer {
+   background-color: $drawer-color;
+   height: 160px;
+   border-left: 1px solid $color-border; 
+}
+
+.drawer-container {
+   display: flex
+}
+.right-inner {
+   width: 22px;
+   background-color: $color-border
+}
+.left-inner {
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+}
+
+.right-action {
+   margin-right: 7px;
+}
+.ng-resizable {
+   bottom: 0px!important;
+   top: unset!important;
+}
+sc-vision-left-nav { 
+   height: 100%
+}
+.drawer {
+   flex: 1;
+}

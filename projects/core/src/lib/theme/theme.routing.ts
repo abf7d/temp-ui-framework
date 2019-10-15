@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from "@angular/router";
 import { ThemeComponent } from './theme.component';
-import { RouteResolver } from './services/route-resolver';
+import { RouteResolverService } from './services/route-resolver.service';
 
 const routes: Routes = [{
   path: "",
   component: ThemeComponent,
-  resolve: { items: RouteResolver }
+  resolve: { items: RouteResolverService }
 }];
 
 @NgModule({

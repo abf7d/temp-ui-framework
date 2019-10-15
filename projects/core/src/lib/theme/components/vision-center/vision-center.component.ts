@@ -1,5 +1,5 @@
 import { Component, ContentChild, ElementRef, OnInit } from '@angular/core';
-import { CentralService } from '../../services/central.service';
+import { EventService } from '../../services/event.service';
 
 @Component({
   selector: 'sc-vision-left-nav',
@@ -11,7 +11,7 @@ export class VisionCenterComponent implements OnInit {
   hideSearch: boolean;
   @ContentChild('wrapper', { static: false }) wrapper: ElementRef;
   hasContent: boolean;
-  constructor(private centralService: CentralService) {
+  constructor(private centralService: EventService) {
     this.hideSearch = true;
 
   }

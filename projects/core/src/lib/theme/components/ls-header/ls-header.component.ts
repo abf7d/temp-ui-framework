@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
-import { CentralService } from '../../services/central.service';
+import { EventService } from '../../services/event.service';
 
 
 @Component({
@@ -26,14 +26,14 @@ export class LsHeaderComponent {
   }
   constructor(
     private actRoute: ActivatedRoute,
-    private centralService: CentralService) {
+    private centralService: EventService) {
 
   }
 
   click(name, id) {
     console.log('click' + ' ' + id);
     let stream = this.centralService.get(id);
-    stream.triggerEvent();
+    stream.next(null);
   }
 
 }

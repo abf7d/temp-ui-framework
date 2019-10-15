@@ -2,8 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable, BehaviorSubject } from 'rxjs';
 
-@Injectable()
-export class APIService {
+@Injectable({
+    providedIn: 'root',
+})
+export class ApiService {
     private _env: string;
     public get env() {
         return this._env;

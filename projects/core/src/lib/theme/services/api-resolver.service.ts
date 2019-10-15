@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
-import { APIService } from './api.service';
+import { ApiService } from './api-service.service';
 import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Resolve } from '@angular/router';
 import { take } from 'rxjs/operators'
 import { forkJoin } from 'rxjs';
 
-@Injectable()
-export class APIResolver implements Resolve<any> {
-  constructor(private apiService: APIService) {
+@Injectable({
+  providedIn: 'root',
+})
+export class ApiResolverService implements Resolve<any> {
+  constructor(private apiService: ApiService) {
     this._hasRun = false;
   }
   _hasRun: boolean;

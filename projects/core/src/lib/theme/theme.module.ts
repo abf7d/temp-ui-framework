@@ -9,13 +9,8 @@ import { VisionCenterComponent } from "./components/vision-center/vision-center.
 import { VisionRightComponent } from "./components/vision-right/vision-right.component";
 import { VisionHeaderComponent } from "./components/vision-header/vision-header.component";
 import { HttpClientModule } from '@angular/common/http';
-import { RoutingConfigService } from './services/routing-config.service';
-import { LsHeaderComponent } from './components/ls-header/ls-header.component'
-import { APIResolver } from './services/api-resolver';
-import { RouteResolver } from './services/route-resolver'
-import { APIService } from './services/api.service';
-import { CentralService } from './services/central.service';
-import { CenterHeaderComponent } from './components/center-header/center-header.component'
+import { LsHeaderComponent } from './components/ls-header/ls-header.component';
+import { CenterHeaderComponent } from './components/center-header/center-header.component';
 
 @NgModule({
   imports: [
@@ -25,13 +20,7 @@ import { CenterHeaderComponent } from './components/center-header/center-header.
     ThemeRoutingModule,
     HttpClientModule
   ],
-  providers: [
-    RoutingConfigService,
-    APIResolver,
-    RouteResolver,
-    APIService,
-    CentralService
-  ],
+  providers: [],
   declarations: [
     ThemeComponent,
     VisionLeftNavComponent,

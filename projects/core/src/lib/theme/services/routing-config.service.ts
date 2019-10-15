@@ -9,7 +9,9 @@ import { LsHeaderComponent } from '../components/ls-header/ls-header.component';
 import { ThemeComponent } from '../theme.component';
 import { CenterHeaderComponent } from '../components/center-header/center-header.component';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root',
+})
 export class RoutingConfigService {
     private _config: Object
     private _env: string;

@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CentralService } from '../../services/central.service';
+import { EventService } from '../../services/event.service';
 
 @Component({
   selector: 'sc-center-header-nav',
@@ -22,12 +22,12 @@ export class CenterHeaderComponent {
       console.log(data)
     })
   }
-  constructor(private actRoute: ActivatedRoute, private centralService: CentralService) { }
+  constructor(private actRoute: ActivatedRoute, private centralService: EventService) { }
 
   click(name, id) {
     console.log('click' + ' ' + id);
     let stream = this.centralService.get(id);
-    stream.triggerEvent();
+    stream.next(null);
   }
 
 }

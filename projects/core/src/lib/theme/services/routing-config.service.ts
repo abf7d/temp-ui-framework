@@ -13,6 +13,11 @@ import { CenterHeaderComponent } from '../components/center-header/center-header
 export class RoutingConfigService {
     private _config: Object
     private _env: string;
+
+    constructor(private _http: HttpClient) {
+        this._env = "default";
+    }
+
     public get env() {
         return this._env;
     }
@@ -20,11 +25,7 @@ export class RoutingConfigService {
         return this._config;
     }
 
-    constructor(private _http: HttpClient) {
-        this._env = "default";
-    }
-
-    getConfig(): Observable<any> {
+    public getConfig(): Observable<any> {
         return this._http.get('./assets/config/' + this._env + '.json');
 
     }

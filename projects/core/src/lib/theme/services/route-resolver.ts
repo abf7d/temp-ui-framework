@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Resolve } from '@angular/router';
+import { Resolve, Route } from '@angular/router';
 import { Router } from '@angular/router';
 import { RoutingConfigService } from './routing-config.service';
 import { APIResolver } from './api-resolver';
@@ -30,7 +30,7 @@ export class RouteResolver implements Resolve<any> {
         });
     }
 
-    buildRoute(element) {
+    buildRoute(element): Route {
         const components = this.routerConfig.components;
         element.component = components[element.component];
         const children = element.children ? element.children.map(child => this.buildRoute(child)) : [];

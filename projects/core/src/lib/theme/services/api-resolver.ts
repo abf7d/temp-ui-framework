@@ -13,8 +13,7 @@ export class APIResolver implements Resolve<any> {
   _hasRun: boolean;
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     let routePath = route.routeConfig.path;
-    // this.getRoute();
-    //const url = // your url;
+
     return forkJoin([
       this.apiService.getStaticConfig().pipe(take(1)),
       this.apiService.getDynamicConfig(routePath).pipe(take(1))],

@@ -1,9 +1,5 @@
-import {
-  Component,
-  ChangeDetectionStrategy
-} from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { AppConfigService } from '../../services/app-config.service';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { ActivatedRoute } from '@angular/router'
 import { CentralService } from '../../services/central.service';
 
 
@@ -28,10 +24,10 @@ export class LsHeaderComponent {
       console.log(data)
     })
   }
-  constructor( private appConfigService: AppConfigService, 
+  constructor(
     private actRoute: ActivatedRoute,
-    private centralService: CentralService ) {
-  
+    private centralService: CentralService) {
+
   }
 
   click(name, id) {
@@ -39,5 +35,5 @@ export class LsHeaderComponent {
     let stream = this.centralService.get(id);
     stream.triggerEvent();
   }
-  
+
 }

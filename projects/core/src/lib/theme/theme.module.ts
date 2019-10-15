@@ -16,7 +16,6 @@ import { RouteResolver } from './services/route-resolver'
 import { APIService } from './services/api.service';
 import { CentralService } from './services/central.service';
 import { CenterHeaderComponent } from './components/center-header/center-header.component'
-import { AppConfigService } from './services/app-config.service';
 
 @NgModule({
   imports: [
@@ -31,8 +30,7 @@ import { AppConfigService } from './services/app-config.service';
     APIResolver,
     RouteResolver,
     APIService,
-    CentralService,
-    AppConfigService
+    CentralService
   ],
   declarations: [
     ThemeComponent,

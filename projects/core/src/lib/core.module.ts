@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CoreComponent } from './core.component';
 import { ThemeModule } from './theme/theme.module';
 
 @NgModule({
-  declarations: [CoreComponent],
+  declarations: [],
   imports: [
     ThemeModule
   ],
-  exports: [CoreComponent]
+  exports: []
 })
 export class CoreModule { }

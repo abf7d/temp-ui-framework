@@ -1,9 +1,5 @@
-import {
-  Component,
-  ChangeDetectionStrategy
-} from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AppConfigService } from '../../services/app-config.service';
 import { CentralService } from '../../services/central.service';
 
 @Component({
@@ -26,11 +22,7 @@ export class CenterHeaderComponent {
       console.log(data)
     })
   }
-  constructor(private appConfigService: AppConfigService,
-    private actRoute: ActivatedRoute,
-    private centralService: CentralService) {
-
-  }
+  constructor(private actRoute: ActivatedRoute, private centralService: CentralService) { }
 
   click(name, id) {
     console.log('click' + ' ' + id);

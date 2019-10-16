@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './vision-header.component.html',
   styleUrls: ['./vision-header.component.scss']
 })
-export class VisionHeaderComponent {
-  constructor() { }
-}
+export class VisionHeaderComponent { }

@@ -1,9 +1,4 @@
 import { Component } from '@angular/core';
-import { EventService } from 'core';
-
-const demoLeftNavItems = [
-  "One", "Two", "Three"
-]
 
 @Component({
   selector: 'app-test',
@@ -12,8 +7,6 @@ const demoLeftNavItems = [
 })
 export class TestComponent {
 
-  constructor(eventService: EventService) {
-    eventService.get('left-nav').next(demoLeftNavItems);
-  }
+  
 
 }

@@ -3,10 +3,8 @@
  */
 
 export * from './lib/core.module';
-export * from './lib/theme/components/layout/layout.component';
-export * from './lib/theme/components/vision-left-nav/vision-left-nav.component';
-export * from './lib/theme/components/center-header/center-header.component';
-export * from './lib/theme/components/ls-header/ls-header.component';
-export * from './lib/theme/components/vision-center/vision-center.component';
-export * from './lib/theme/components/vision-header/vision-header.component';
-export * from './lib/theme/components/vision-right/vision-right.component';
+export * from './lib/ui/components/header/header.component';
+export * from './lib/ui/components/layout/layout.component';
+export * from './lib/ui/components/left-nav/left-nav.component';
+export * from './lib/ui/components/right-nav/right-nav.component';
+export * from './lib/ui/components/tenant-nav/tenant-nav.component';

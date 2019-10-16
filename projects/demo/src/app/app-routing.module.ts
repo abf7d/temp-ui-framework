@@ -1,5 +1,5 @@
 import { RouterModule, Routes } from '@angular/router';
-import { LayoutComponent, VisionLeftNavComponent, VisionCenterComponent, VisionRightComponent, LsHeaderComponent, CenterHeaderComponent } from 'core';
+import { LayoutComponent, LeftNavComponent, HeaderComponent, RightNavComponent, TenantNavComponent } from 'core';
 
 const routes: Routes = [
   {
@@ -8,34 +8,34 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: VisionLeftNavComponent,
+        component: TenantNavComponent,
         outlet: 'left'
       },
       {
         path: '',
-        component: VisionCenterComponent,
+        component: LeftNavComponent, // todo: for now 
         outlet: 'center',
         children: [
           {
             path: '',
-            component: VisionLeftNavComponent,
+            component: LeftNavComponent,
             outlet: 'center-main'
           }
         ]
       },
       {
         path: '',
-        component: VisionRightComponent,
+        component: RightNavComponent,
         outlet: 'right'
       },
       {
         path: '',
-        component: LsHeaderComponent,
+        component: HeaderComponent,
         outlet: 'header'
       },
       {
         path: '',
-        component: CenterHeaderComponent,
+        component: HeaderComponent,
         outlet: 'center-header'
       }
     ]

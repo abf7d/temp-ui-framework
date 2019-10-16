@@ -1,17 +1,25 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { TestComponent } from './test/test.component';
+import { ThemeComponent, VisionLeftNavComponent } from 'core';
+// import DefaultLayoutRoute
 
 const routes: Routes = [
   {
-    path: 'home/',
-    component: TestComponent,
-    outlet: 'center',
+    path: "",
+    component: ThemeComponent,
+    children: [
+      {
+        path: "",
+        component: VisionLeftNavComponent,
+        outlet: "left"
+      },
+      {
+        path: '',
+        component: TestComponent,
+        outlet: 'center'
+      }
+    ]
   }
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+export const UsersRouting = RouterModule.forRoot(routes);

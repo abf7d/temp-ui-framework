@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
+import { UsersRouting } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from 'core';
 import { TestComponent } from './test/test.component';
 
+console.log('app module')
 @NgModule({
   declarations: [
     AppComponent,
@@ -13,7 +14,7 @@ import { TestComponent } from './test/test.component';
   imports: [
     CoreModule,
     BrowserModule,
-    AppRoutingModule
+    UsersRouting
   ],
   providers: [],
   bootstrap: [AppComponent]

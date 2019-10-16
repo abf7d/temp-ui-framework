@@ -30,9 +30,10 @@ import { CenterHeaderComponent } from './components/center-header/center-header.
     LsHeaderComponent,
     CenterHeaderComponent
   ],
-  exports: [ThemeComponent],
+  exports: [ThemeComponent, VisionLeftNavComponent],
   entryComponents: [
-    ThemeComponent, VisionLeftNavComponent,
+    ThemeComponent,
+    VisionLeftNavComponent,
     VisionRightComponent,
     VisionCenterComponent,
     VisionHeaderComponent,

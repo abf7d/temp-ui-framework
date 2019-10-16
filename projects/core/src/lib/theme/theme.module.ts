@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ThemeComponent } from './theme.component';
 import { RouterModule } from '@angular/router';
 import { AngularDraggableModule } from 'angular2-draggable';
 import { ThemeRoutingModule } from './theme.routing'
@@ -11,6 +10,7 @@ import { VisionHeaderComponent } from "./components/vision-header/vision-header.
 import { HttpClientModule } from '@angular/common/http';
 import { LsHeaderComponent } from './components/ls-header/ls-header.component';
 import { CenterHeaderComponent } from './components/center-header/center-header.component';
+import { LayoutComponent } from '../../public-api';
 
 @NgModule({
   imports: [
@@ -22,17 +22,20 @@ import { CenterHeaderComponent } from './components/center-header/center-header.
   ],
   providers: [],
   declarations: [
-    ThemeComponent,
+    LayoutComponent,
     VisionLeftNavComponent,
     VisionRightComponent,
     VisionCenterComponent,
     VisionHeaderComponent,
     LsHeaderComponent,
-    CenterHeaderComponent
+    CenterHeaderComponent,
+    LayoutComponent
   ],
-  exports: [ThemeComponent, VisionLeftNavComponent],
+  exports: [
+    LayoutComponent,
+    VisionLeftNavComponent],
   entryComponents: [
-    ThemeComponent,
+    LayoutComponent,
     VisionLeftNavComponent,
     VisionRightComponent,
     VisionCenterComponent,

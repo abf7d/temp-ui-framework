@@ -1,10 +1,10 @@
 import { RouterModule, Routes } from '@angular/router';
-import { ThemeComponent, VisionLeftNavComponent, VisionCenterComponent, VisionRightComponent, LsHeaderComponent, CenterHeaderComponent } from 'core';
+import { LayoutComponent, VisionLeftNavComponent, VisionCenterComponent, VisionRightComponent, LsHeaderComponent, CenterHeaderComponent } from 'core';
 
 const routes: Routes = [
   {
     path: '',
-    component: ThemeComponent,
+    component: LayoutComponent,
     children: [
       {
         path: '',

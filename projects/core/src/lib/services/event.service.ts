@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Dictionary } from '../../common/types';
+import { Dictionary } from '../common/types';
 
 @Injectable({
     providedIn: 'root',

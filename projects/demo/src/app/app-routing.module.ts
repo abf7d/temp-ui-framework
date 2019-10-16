@@ -1,22 +1,42 @@
 import { RouterModule, Routes } from '@angular/router';
-import { TestComponent } from './test/test.component';
-import { ThemeComponent, VisionLeftNavComponent } from 'core';
-// import DefaultLayoutRoute
+import { ThemeComponent, VisionLeftNavComponent, VisionCenterComponent, VisionRightComponent, LsHeaderComponent, CenterHeaderComponent } from 'core';
 
 const routes: Routes = [
   {
-    path: "",
+    path: '',
     component: ThemeComponent,
     children: [
       {
-        path: "",
+        path: '',
         component: VisionLeftNavComponent,
-        outlet: "left"
+        outlet: 'left'
       },
       {
         path: '',
-        component: TestComponent,
-        outlet: 'center'
+        component: VisionCenterComponent,
+        outlet: 'center',
+        children: [
+          {
+            path: '',
+            component: VisionLeftNavComponent,
+            outlet: 'center-main'
+          }
+        ]
+      },
+      {
+        path: '',
+        component: VisionRightComponent,
+        outlet: 'right'
+      },
+      {
+        path: '',
+        component: LsHeaderComponent,
+        outlet: 'header'
+      },
+      {
+        path: '',
+        component: CenterHeaderComponent,
+        outlet: 'center-header'
       }
     ]
   }

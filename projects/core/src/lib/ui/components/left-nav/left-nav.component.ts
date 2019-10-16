@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'ls-ui-left-nav',
   templateUrl: './left-nav.component.html',
-  styleUrls: ['./left-nav.component.css']
+  styleUrls: ['./left-nav.component.scss']
 })
 export class LeftNavComponent implements OnInit {
 

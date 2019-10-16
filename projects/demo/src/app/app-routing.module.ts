@@ -1,5 +1,6 @@
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent, LeftNavComponent, HeaderComponent, RightNavComponent, TenantNavComponent } from 'core';
+import { TestComponent } from './test/test.component';
 
 const routes: Routes = [
   {
@@ -8,20 +9,18 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: TenantNavComponent,
+        component: LeftNavComponent,
         outlet: 'left'
       },
       {
         path: '',
-        component: LeftNavComponent, // todo: for now 
-        outlet: 'center',
-        children: [
-          {
-            path: '',
-            component: LeftNavComponent,
-            outlet: 'center-main'
-          }
-        ]
+        component: TenantNavComponent,
+        outlet: 'tenant'
+      },
+      {
+        path: '',
+        component: TestComponent, // todo: for now 
+        outlet: 'center'
       },
       {
         path: '',

@@ -41,7 +41,6 @@
 .header-parent a {
     text-decoration: none;
     color: #777;
-    // padding: 15px;
     font-family: sans-serif;
     font-size: 18px;
 }
@@ -79,6 +78,6 @@ li > ul.drop-menu {
 }
 .nav-top-content {
     height: 74px;
-    background-color: $main-container-color; //#3E3E3E
+    background-color: $main-container-color; 
     flex: 1;
   }

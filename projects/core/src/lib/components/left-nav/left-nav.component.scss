@@ -5,25 +5,18 @@
 
 .second-left-nav {
   width: 50px;
-  background-color: $main-container-color; //#3e3e3e;
+  background-color: $main-container-color;
 }
 .secondary-left-nav {
   width: 300px;
-  background-color: $main-container-color; //#3e3e3e;
+  background-color: $main-container-color; 
 }
 /* margins */
 .second-left-nav {
   margin: 0 2px 2px 1px;
-  border: 1px solid $color-border; //black;
+  border: 1px solid $color-border;
 }
 
-/* Details */
-.open-toggle {
-  //   background: transparent url("/assets/double-arrow.png") 0% 0% no-repeat padding-box;
-}
-.close-toggle {
-  //   background: transparent url("/assets/close.png") 0% 0% no-repeat padding-box;
-}
 .side-toggles > img {
   height: 11px;
   margin: 4px;
@@ -41,15 +34,15 @@
 }
 
 .nih-button {
-  // margin: auto;
-  /* flex: 1; */
   width: 23px;
 }
+
 .user-circle {
    width: 30px;
    padding-bottom: 9px;
    margin-left: 5px;
 }
+
 .btn-container {
   display: flex;
   padding: 14px 0 14px 0;
@@ -61,11 +54,12 @@
   flex: 1;
 }
 
-
 .secondary-left-nav {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  display: flex;
+    flex: 1;
 }
 .secondary-left-nav > * {
   width: 100%;
@@ -94,4 +88,9 @@
   background-repeat: no-repeat;
   padding-bottom: 2px;
   margin-top: 7px;
+}
+
+.secondary-left-nav {
+  display: flex;
+    flex: 1;
 }

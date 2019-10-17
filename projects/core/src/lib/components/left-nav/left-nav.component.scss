@@ -66,6 +66,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  display: flex;
+    flex: 1;
 }
 .secondary-left-nav > * {
   width: 100%;
@@ -94,4 +96,9 @@
   background-repeat: no-repeat;
   padding-bottom: 2px;
   margin-top: 7px;
+}
+
+.secondary-left-nav {
+  display: flex;
+    flex: 1;
 }

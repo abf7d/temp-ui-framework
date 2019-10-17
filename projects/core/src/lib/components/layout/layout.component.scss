@@ -127,3 +127,14 @@ sc-vision-left-nav {
 .header-container {
     // flex: 1;
 }
+
+
+
+  
+  :host::ng-deep .outlet > :nth-child(2) {
+    display: flex;
+  }
+
+  .right-container {
+    display: flex;
+  }

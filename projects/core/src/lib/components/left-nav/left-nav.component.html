@@ -1,7 +1,84 @@
-<div class="secondary-left-nav">
+<!-- <div class="secondary-left-nav">
     <div class="btn-container file-names">
         <ul class="names">
             <li *ngFor="let item of items">{{item}}</li>
         </ul>
     </div>
+</div> -->
+
+
+
+<div class="secondary-left-nav">
+    
+    <div class="btn-container file-names">
+        <div class="logo">
+                <img class="logo-img" src="{{header.img}}" /> <div class="menu-entry-txt"> {{header.text}} </div>
+        </div> 
+        <ul class="names" *ngFor="let item of items">
+            <li *ngFor="let entry of item.group" [class.active]="entry.selected">
+                <div> <img src="{{entry.image}}" /> </div>
+                <div class="menu-entry-txt">{{entry.text}} test</div>
+                <div class="selection-open"><i class="fa fa-chevron-right"></i></div>
+            </li>
+        </ul>
+    </div>
+    <div class="btn-container avatar-holder">
+        <div> <img class="user-circle" src="/ui/assets/user-circle.png" />
+        </div>
+        <div>
+            Hello!
+        </div>
+    </div>
 </div>
+
+
+<!-- 
+
+<div class="secondary-left-nav">
+    <div class="btn-container file-names">
+        <div class="logo">
+                <img class="logo-img" src="/ui/assets/csv-file.png" /> <div class="logo-txt"> AlphaNCAT </div>
+        </div>
+        <ul class="names">
+            <li>
+                <div> <img src="/ui/assets/csv-file.png" /> </div>
+                <div class="menu-entry-txt">Publication</div>
+                <div class="selection-open"><i class="fa fa-chevron-right"></i></div>
+            </li>
+            <li>
+                <div> <img src="/ui/assets/csv-file.png" /> </div>
+                <div class="menu-entry-txt">Instruments <br/>& Resource</div>
+                <div class="selection-open"><i class="fa fa-chevron-right"></i></div>
+            </li>
+            <li>
+                <div> <img src="/ui/assets/csv-file.png" /> </div>
+                <div class="menu-entry-txt">Project Tracking</div>
+                <div class="selection-open"><i class="fa fa-chevron-right"></i></div>
+            </li>
+        </ul>
+        <ul class="names">
+            <li class="active">
+                <div> <img src="/ui/assets/csv-file.png" /> </div>
+                <div class="menu-entry-txt">Groups</div>
+            </li>
+            <li>
+                <div> <img src="/ui/assets/csv-file.png" /> </div>
+                <div class="menu-entry-txt">Pages</div>
+            </li>
+        </ul>
+        <ul class="names">
+            <li>
+                <div> <img src="/ui/assets/csv-file.png" /> </div>
+                <div class="menu-entry-txt">Storage Space</div>
+            </li>
+        </ul>
+
+    </div>
+    <div class="btn-container avatar-holder">
+        <div> <img class="user-circle" src="/ui/assets/user-circle.png" />
+        </div>
+        <div>
+            Hello!
+        </div>
+    </div>
+</div> -->

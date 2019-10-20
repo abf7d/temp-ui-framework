@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { EventService } from 'core';
 
 @Component({
   selector: 'app-test',
@@ -7,6 +8,13 @@ import { Component } from '@angular/core';
 })
 export class TestComponent {
 
-  
+  hideContent:boolean;
+  constructor(private eventService: EventService) {
+
+    this.hideContent = false;
+    const searchEvent = this.eventService.get('search-click');
+    searchEvent.subscribe( val => this.hideContent = !this.hideContent);
+    
+  }
 
 }

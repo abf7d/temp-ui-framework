@@ -9,13 +9,20 @@ import { RightNavComponent } from './components/right-nav/right-nav.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TenantNavComponent } from './components/tenant-nav/tenant-nav.component';
 import { EventService } from './services/event.service';
+ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+ import {MatTreeModule, MatIconModule} from '@angular/material';
+import { CdkTreeModule } from '@angular/cdk/tree';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     AngularDraggableModule,
-    HttpClientModule
+    HttpClientModule,
+     BrowserAnimationsModule,
+     MatTreeModule,
+     CdkTreeModule,
+     MatIconModule 
   ],
   declarations: [
     LayoutComponent,

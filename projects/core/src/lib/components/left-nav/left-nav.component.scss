@@ -151,15 +151,16 @@
 
 
     line-height: $heading-line-height;
-    font-size: $heading-font-size;
+    
     padding: 10px 12px;
     
    // font-size: 22px;
-    .logo-txt {
+    .menu-entry-txt {
     //  padding-left: 17px;
    //   font-size: 23px;
+   font-size: $heading-font-size;
     }
-    .logo-img { width: $icon-width;
+    .logo-img { width: $heading-img-width;
       margin-left: $icon-left-margin;}
     // .logo-img { width: 50px;}
   }

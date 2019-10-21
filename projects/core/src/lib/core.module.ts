@@ -12,7 +12,7 @@ import { EventService } from './services/event.service';
  import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
  import {MatTreeModule, MatIconModule} from '@angular/material';
 import { CdkTreeModule } from '@angular/cdk/tree';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   imports: [
     CommonModule,
@@ -20,9 +20,10 @@ import { CdkTreeModule } from '@angular/cdk/tree';
     AngularDraggableModule,
     HttpClientModule,
      BrowserAnimationsModule,
+     MatIconModule, 
      MatTreeModule,
      CdkTreeModule,
-     MatIconModule 
+     FontAwesomeModule
   ],
   declarations: [
     LayoutComponent,

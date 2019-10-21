@@ -103,18 +103,30 @@
     width: $icon-width;
     margin-left: $icon-left-margin;
   }
-  .names li {
+  .names > * {
     // padding-left: 40px;
     // background-image: url("../../../../assets/csv-file.png");
     background-size: 21px;
     background-repeat: no-repeat;
     padding-bottom: 2px;
-    margin-top: 7px;
+    // margin-top: 7px;
     display: flex;
     line-height: $menu-line-height; //29px;
     padding: $menu-li-padding;
     //line-height: $menu-line-height;
     text-transform: $menu-text-transform;
+  }
+
+  .name-color-0{
+    background-color: brightness(1);
+  }
+  .name-color{
+    background-color: black;
+    opacity: .6;
+  }
+  .name-color-2{
+    background-color: black;
+    opacity: .6;
   }
 
   .single-btn {
@@ -127,7 +139,7 @@
 
   .names {
      border-bottom: $menu-section-border-botom; 
-     padding-bottom: 25px;
+     padding-bottom: 7px;
 
   }
 
@@ -169,3 +181,9 @@
     background-color: $heading-bg-color;
     color: $heading-text-color;
   }
+.drawer{
+  padding-right: 13px;
+  padding-left: 13px;
+}
+
+// .cdk-tree-node {margin-left:12px}

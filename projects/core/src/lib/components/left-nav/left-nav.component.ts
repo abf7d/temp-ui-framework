@@ -6,7 +6,7 @@ import { EventService } from '../../services/event.service';
 
 import { ArrayDataSource } from '@angular/cdk/collections';
 import { FlatTreeControl } from '@angular/cdk/tree';
-
+import { faAngleRight, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 // Tree data is for Angular Material
 const TREE_DATA: ExampleFlatNode[] = [
@@ -36,9 +36,13 @@ const TREE_DATA: ExampleFlatNode[] = [
     level: 1,
   }, {
     name: 'Broccoli',
-    expandable: false,
+    expandable: true,
     level: 2,
   }, {
+    name: 'Next One Long Name',
+    expandable: false,
+    level: 3,
+  },{
     name: 'Brussel sprouts',
     expandable: false,
     level: 2,
@@ -81,7 +85,8 @@ export class LeftNavComponent {
     eventService.get('left-nav').subscribe(val => this.items = val);
   }
 
-
+  faAngleRight =faAngleRight;
+  faAngleDown =faAngleDown;
   // Below this point is all Angular Material
   treeControl = new FlatTreeControl<ExampleFlatNode>(
     node => node.level, node => node.expandable);
@@ -106,5 +111,14 @@ export class LeftNavComponent {
     const parent = this.getParentNode(node);
     return !parent || parent.isExpanded;
   }
-
+  getColor(level) {
+    console.log( '#' + (444 - (+level * 111)));
+    return '#' + (444 - (+level * 111));
+  }
+  getClass(level) {
+    if(level !== 0) {
+    return 'name-color';
+    }
+    return '';
+  }
 }

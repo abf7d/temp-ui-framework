@@ -8,6 +8,7 @@ import { ArrayDataSource } from '@angular/cdk/collections';
 import { FlatTreeControl } from '@angular/cdk/tree';
 
 
+// Tree data is for Angular Material
 const TREE_DATA: ExampleFlatNode[] = [
   {
     name: 'Fruit',
@@ -56,6 +57,7 @@ const TREE_DATA: ExampleFlatNode[] = [
   }
 ];
 
+// For Angular Material
 /** Flat node with expandable and level information */
 interface ExampleFlatNode {
   expandable: boolean;
@@ -80,6 +82,7 @@ export class LeftNavComponent {
   }
 
 
+  // Below this point is all Angular Material
   treeControl = new FlatTreeControl<ExampleFlatNode>(
     node => node.level, node => node.expandable);
 

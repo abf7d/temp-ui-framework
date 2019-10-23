@@ -13,6 +13,7 @@ import { EventService } from './services/event.service';
  import {MatTreeModule, MatIconModule} from '@angular/material';
 import { CdkTreeModule } from '@angular/cdk/tree';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ThemeService } from './services/theme.service';
 @NgModule({
   imports: [
     CommonModule,
@@ -33,7 +34,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     TenantNavComponent
   ],
   providers: [
-    EventService
+    EventService,
+    ThemeService
   ],
   entryComponents: [
   ]

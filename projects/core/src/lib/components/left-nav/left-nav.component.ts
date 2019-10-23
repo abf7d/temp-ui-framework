@@ -99,7 +99,7 @@ export class LeftNavComponent {
     const nodeIndex = TREE_DATA.indexOf(node);
 
     for (let i = nodeIndex - 1; i >= 0; i--) {
-      if (TREE_DATA[i].level === node.level - 1) {
+      if (TREE_DATA[i].level <= node.level - 1) {
         return TREE_DATA[i];
       }
     }
@@ -108,8 +108,15 @@ export class LeftNavComponent {
   }
 
   shouldRender(node: ExampleFlatNode) {
-    const parent = this.getParentNode(node);
-    return !parent || parent.isExpanded;
+    
+    let parent = this.getParentNode(node);
+    let render = (!parent || parent.isExpanded);
+    while(parent) {
+      parent = this.getParentNode(parent); 
+      render = render && ((parent && parent.isExpanded) || (!parent));
+    }
+    
+    return render;
   }
   getColor(level) {
     console.log( '#' + (444 - (+level * 111)));

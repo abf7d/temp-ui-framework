@@ -1,6 +1,6 @@
 @import "../../../assets/variables.scss";
 .tenant-list {
-    background-color: var(--main-container-color); 
+  
     border-right: 1px solid black;
 }
 
@@ -10,11 +10,7 @@
 //https://www.youtube.com/watch?v=BALaj39rbZE
 
 .tenant-list li {
-    background-color: var(--left-nav-font-color);
-    height: 45px;
-    width: 45px;
-    margin: 40px 28px;
-    border-radius: 5px;
+    
     list-style-type: none;
     flex: 1;
 }
@@ -46,4 +42,18 @@
     // display: flex;
     flex-direction: column;
     flex: 1;
+    background-color: var(--main-container-color); 
+    border-right: 1px solid black;
+  }
+
+  .tenant-btn {
+    background-color: var(--left-nav-font-color);
+    height: 45px;
+    width: 45px;
+    margin: 40px 28px;
+    border-radius: 5px;
+  }
+
+  .tenant-btn-container.selected {
+      background-color: var(--active-menu-entry-bg-color);
   }

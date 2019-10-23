@@ -13,7 +13,9 @@ export class TestComponent {
     this.hideContent = false;
     const searchEvent = this.eventService.get('search-click');
     searchEvent.subscribe(val => {
-      this.hideContent = !this.hideContent;
+      if (val !== null) {
+        this.hideContent = !this.hideContent;
+      }
     });
 
   }

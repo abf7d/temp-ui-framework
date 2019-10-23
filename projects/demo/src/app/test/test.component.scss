@@ -30,7 +30,7 @@
 .action-buttons {
   background-color: var(--secondary-container-color);
   height: 34px;
-  display: flex;
+  display: var(--right-nav-display);
   justify-content: space-between;
   margin-top: 3px;
 }
@@ -108,7 +108,7 @@ button {
 }
 
 .drawer-container {
-  display: flex;
+  display: var(--right-nav-display);
 }
 .right-inner {
   width: 22px;
@@ -148,4 +148,18 @@ sc-vision-left-nav {
   .main-content {
     padding: 30px;
 
+  }
+
+  .main-content {
+    position: relative;
+  }
+
+  .temp-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .search-toggle{
+    font-size: 25px;
   }

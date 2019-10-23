@@ -3,9 +3,9 @@
 }
 
 .catalog {
-  display: flex;
   justify-content: center;
   flex: 1;
+  display: var(--right-nav-display);
 }
 .catalog div {
   margin: 7px;

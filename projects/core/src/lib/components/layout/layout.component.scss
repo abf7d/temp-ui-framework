@@ -12,15 +12,15 @@
 #main-section {
   width: 100%;
 }
-.second-wrapper, .second-main-section,.footer,
-.all-wrap, .secondary-left-nav, .left-nav, .second-main-content,
+.wrapper, .main-section,.footer,
+.all-wrap, .secondary-left-nav, .left-nav, .main-content,
 .secondary-right-nav,  .local-footer,
 .second-left-nav, div.div.global {
   border: 1px solid $color-border;
 }
 
 /* new layout */
-.second-wrapper {
+.wrapper {
   height: 100vh;
   @include flex-column;
 }
@@ -28,18 +28,18 @@
   height: 74px;
   background-color: $main-container-color;
 }
-.second-main-section {
+.main-section {
   flex: 1;
   display: flex;
 }
 div.global {
   height: 75px;
 }
-.second-main-content {
+.main-content {
   flex: 1;
 }
 
-.second-main-content {
+.main-content {
   @include flex-column;
 }
 .center-router-content {
@@ -47,6 +47,7 @@ div.global {
   background-color: $color-dark-content; 
   display: flex;
 }
+
 
 .catalog {
   height: 44px;
@@ -69,7 +70,7 @@ div.global {
 }
 
 /* white was showing in a small border */
-.second-wrapper {
+.wrapper {
   background-color: $color-dark-content; 
 }
 
@@ -118,4 +119,12 @@ sc-vision-left-nav {
 
 .right-container {
   display: flex;
+}
+:host::ng-deep .center-router-content > :nth-child(2) {
+  flex-direction: column;
+  flex: 1;
+}
+
+:host::ng-deep .tenant > :nth-child(2) {
+  flex-direction: column;
 }

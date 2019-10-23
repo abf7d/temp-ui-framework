@@ -1,4 +1,4 @@
-<div class="secondary-left-nav">
+<!-- <div class="secondary-left-nav">
 
     <div class="btn-container file-names">
         <div class="logo">
@@ -9,7 +9,6 @@
             <li *ngFor="let entry of item.group" [class.active]="entry.selected">
                 <div> <img src="{{entry.image}}" /> </div>
                 <div class="menu-entry-txt">{{entry.text}} test</div>
-                <div class="selection-open"><i class="fas fa-chevron-right"></i></div>
             </li>
         </ul>
     </div>
@@ -20,7 +19,7 @@
             Hello!
         </div>
     </div>
-</div>
+</div> -->
 
 
 
@@ -33,12 +32,9 @@
         </div>
         <cdk-tree class="names" [dataSource]="dataSource" [treeControl]="treeControl">
             <!-- This is the tree node template for leaf nodes -->
-            <cdk-tree-node *cdkTreeNodeDef="let node" cdkTreeNodePadding
+            <cdk-tree-node [style.paddingLeft]="getPadding(node.level)" *cdkTreeNodeDef="let node" cdkTreeNodePadding
                 [style.display]="shouldRender(node) ? 'flex' : 'none'" class="example-tree-node"
                 class="{{getClass(node.level)}}">
-                <!-- [style.padding]="'4px 12px'" -->
-                <!-- [style.backgroundColor]="getColor(node.level) "  -->
-                <!-- use a disabled button to provide padding for tree leaf -->
                 <div class="selection-open" src="http://localhost:8080/ui/assets/eye.png" mat-icon-button
                     cdkTreeNodeToggle [attr.aria-label]="'toggle ' + node.filename"
                     (click)="node.isExpanded = !node.isExpanded"
@@ -48,19 +44,14 @@
                 </div>
 
                 <div> <img src="http://localhost:8080/ui/assets/eye.png" /> </div>
-                <!--src="{{entry.image}}"-->
-
-
-                <div class="menu-entry-txt">{{node.name}}
-                    <!--{{entry.text}} test-->
+                <div class="menu-entry-txt">
+                    {{node.name}}
                 </div>
             </cdk-tree-node>
             <!-- This is the tree node template for expandable nodes -->
-            <!-- [style.padding]="'4px 12px'" -->
-            <cdk-tree-node *cdkTreeNodeDef="let node; when: hasChild" cdkTreeNodePadding
+            <cdk-tree-node [style.paddingLeft]="getPadding(node.level)" *cdkTreeNodeDef="let node; when: hasChild" cdkTreeNodePadding
                 [style.display]="shouldRender(node) ? 'flex' : 'none'" class="example-tree-node"
                 class="{{getClass(node.level)}}">
-                <!-- [style.backgroundColor]="getColor(node.level) "  -->
                 <div class="selection-open" src="http://localhost:8080/ui/assets/eye.png" mat-icon-button
                     cdkTreeNodeToggle [attr.aria-label]="'toggle ' + node.filename"
                     (click)="node.isExpanded = !node.isExpanded"
@@ -69,21 +60,14 @@
                     </fa-icon>
                 </div>
                 <div> <img src="http://localhost:8080/ui/assets/eye.png" /> </div>
-                <!--src="{{entry.image}}"-->
-
-
-                <div class="menu-entry-txt">{{node.name}}
-                    <!--{{entry.text}} test-->
+                <div class="menu-entry-txt">
+                    {{node.name}}
                 </div>
-                <!-- <mat-icon class="mat-icon-rtl-mirror">
-                  {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
-                </mat-icon> -->
-                <!-- </button> -->
             </cdk-tree-node>
         </cdk-tree>
     </div>
     <div class="btn-container avatar-holder">
-        <div> <img class="user-circle" src="/ui/assets/user-circle.png" />
+        <div> <img class="user-circle" src="http://localhost:8080/ui/assets/user-circle.png" />
         </div>
         <div>
             Hello!

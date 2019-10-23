@@ -12,7 +12,9 @@ export class TestComponent {
   constructor(private eventService: EventService, private themeService: ThemeService) {
     this.hideContent = false;
     const searchEvent = this.eventService.get('search-click');
-    searchEvent.subscribe(val => this.hideContent = !this.hideContent);
+    searchEvent.subscribe(val => {
+      this.hideContent = !this.hideContent;
+    });
 
   }
 

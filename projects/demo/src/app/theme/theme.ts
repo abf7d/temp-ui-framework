@@ -4,7 +4,7 @@ import { Theme } from 'core/lib/common/types';
     name: "labshare",
     properties: {
         "--secondary-bar": "#292929",
-        "--secondary-container-color": "#323232",
+        "--secondary-container-color": "white",
         "--color-border": "black",
         "--main-text-color": "#c2c2c2",
         "--side-toggles": "black",
@@ -17,11 +17,11 @@ import { Theme } from 'core/lib/common/types';
         "--main-container-color": "#321771",
       
         "--space-between-icon-text": "16px",
-        "--icon-width": "21px",
+        "--icon-width": "26px",
         "--icon-left-margin": "0px",
         "--menu-font": "'Poppins'",
         "--menu-font-family": "'Poppins', sans-serif",
-        "--menu-font-size": "16px",
+        "--menu-font-size": "19px",
         "--menu-line-height": "2.5",
         "--menu-text-transform": "inherit",
         "--content-menu-width": "300px",
@@ -36,9 +36,11 @@ import { Theme } from 'core/lib/common/types';
         "--color-dark-content": "#2b2b2b",
         "--heading-bg-color": "#210a58",
         "--heading-text-color": "white",
-        "--heading-font-size": "18px",
+        "--heading-font-size": "21px",
         "--heading-line-height": "2",
         "--heading-img-width": "30px",
+        "--tenant-display": "block",
+        "--right-nav-display": "none"
     }
   };
   
@@ -83,6 +85,8 @@ import { Theme } from 'core/lib/common/types';
         "--heading-text-color": "white",
         "--heading-font-size": "18px",
         "--heading-line-height": "2",
-        "--heading-img-width": "30px"
+        "--heading-img-width": "30px",
+        "--tenant-display": "none",
+        "--right-nav-display": "flex"
     }
   };

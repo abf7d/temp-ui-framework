@@ -4,12 +4,14 @@ import { UsersRouting } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from 'core';
 import { TestComponent } from './test/test.component';
+import { CenterHeaderComponent } from './center-header/center-header.component';
 
 console.log('app module')
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent
+    TestComponent,
+    CenterHeaderComponent
   ],
   imports: [
     CoreModule,

@@ -1,7 +1,60 @@
-<div class="main-content">
-    <div [hidden]="hideContent">Main Content Area</div>
-    <button class="btn theme-btn" (click)="changeTheme()">Change Theme</button>
+
+<div class="action-buttons">
+    <div class="left-action" *ngIf="!hasContent">
+        <img src="http://localhost:8080/ui/assets/file-filter.png" />
+        <img src="http://localhost:8080/ui/assets/save.png" />
+        <div class="file-name-title">DataFile_Name.csv</div>
+    </div>
+    <div class="left-action" #leftwrapper *ngIf="hasContent">
+        <ng-content select=[left-list]>
+        </ng-content>
+    </div>
+    <div class="center-action">
+        <div>
+            <img src="http://localhost:8080/ui/assets/zoom.png" />
+            <img src="http://localhost:8080/ui/assets/eye.png" />
+        </div>
+        <div>
+            <img src="http://localhost:8080/ui/assets/multi-group.png" />
+            <img src="http://localhost:8080/ui/assets/sub-group.png" />
+        </div>
+        <div>
+            <img src="http://localhost:8080/ui/assets/rect.png" />
+            <img src="http://localhost:8080/ui/assets/poly.png" />
+            <img src="http://localhost:8080/ui/assets/cross.png" />
+            <select>
+                <option>Predefined Selection</option>
+            </select>
+            <button>Select Points</button>
+        </div>
+    </div>
+    <div class="right-action">
+        <img src="http://localhost:8080/ui/assets/z-arc.png" />
+        <img src="http://localhost:8080/ui/assets/plot.png" />
+        <img src="http://localhost:8080/ui/assets/radio.png" />
+    </div>
 </div>
+<div  class="main-content">
+        <button class="btn theme-btn" (click)="changeTheme()">Change Theme</button>
+        <div class="search-toggle" [hidden]="hideContent">
+                <div>Main Content Area</div>
+        </div>
+        <!-- ngResizable [rzHandles]="'w'" position="'0,0'" -->
+    <div class="inner-main" [hidden]="hideContent">
+        <div class="right-container outlet" >
+            <router-outlet name="center-main"></router-outlet>
+        </div>
+
+        
+     
+    </div>
+</div>
+
+
+
+
+
+
 <div class="drawer-container">
     <div class="left-inner">
         <div class="local-footer">

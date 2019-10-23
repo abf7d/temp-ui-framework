@@ -128,4 +128,7 @@ export class LeftNavComponent {
     }
     return '';
   }
+  getPadding(level) {
+    return (level * 26) + 'px';
+  }
 }

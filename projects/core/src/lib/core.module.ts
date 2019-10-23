@@ -31,7 +31,7 @@ import { ThemeService } from './services/theme.service';
     LeftNavComponent,
     RightNavComponent,
     HeaderComponent,
-    TenantNavComponent
+    TenantNavComponent,
   ],
   providers: [
     EventService,

@@ -1,7 +1,23 @@
 @import "../../../assets/variables.scss";
 .tenant-list {
-    background-color: $main-container-color;
+    background-color: var(--main-container-color); 
     border-right: 1px solid black;
 }
 
 //https://www.youtube.com/watch?v=BALaj39rbZE
+
+.tenant-list li {
+    background-color: var(--left-nav-font-color);
+    height: 45px;
+    width: 45px;
+    margin: 40px 28px;
+    border-radius: 5px;
+    list-style-type: none;
+}
+    
+.tenant-list {
+    height: 50px;
+    padding: 6px;
+    flex: 1;
+    display: var(--tenant-display);
+}

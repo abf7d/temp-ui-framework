@@ -40,7 +40,8 @@ import { Theme } from 'core/lib/common/types';
         "--heading-line-height": "2",
         "--heading-img-width": "30px",
         "--tenant-display": "block",
-        "--right-nav-display": "none"
+        "--right-nav-display": "none",
+        "--flex-display": "flex"
     }
   };
   
@@ -87,6 +88,7 @@ import { Theme } from 'core/lib/common/types';
         "--heading-line-height": "2",
         "--heading-img-width": "30px",
         "--tenant-display": "none",
-        "--right-nav-display": "flex"
+        "--right-nav-display": "flex",
+        "--flex-display": "none"
     }
   };

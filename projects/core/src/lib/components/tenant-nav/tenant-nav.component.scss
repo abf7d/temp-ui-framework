@@ -4,6 +4,9 @@
     border-right: 1px solid black;
 }
 
+*{
+    color: var(--left-nav-font-color);
+}
 //https://www.youtube.com/watch?v=BALaj39rbZE
 
 .tenant-list li {
@@ -13,11 +16,34 @@
     margin: 40px 28px;
     border-radius: 5px;
     list-style-type: none;
+    flex: 1;
 }
     
 .tenant-list {
-    height: 50px;
+    // height: 50px;
     padding: 6px;
-    flex: 1;
+    
     display: var(--tenant-display);
+
+    flex-direction: column;
+    padding-left: 4px;
 }
+.expand {
+    border-right: 1px solid black;
+    flex: 1;     
+    background-color: var(--main-container-color);
+}
+.avatar-holder {
+    border-right: 1px solid black;
+    background-color: var(--main-container-color);
+    text-align: center;
+    padding-bottom: 30px;
+    
+  }
+  .tenant-container {
+
+    display: var(--flex-display);
+    // display: flex;
+    flex-direction: column;
+    flex: 1;
+  }

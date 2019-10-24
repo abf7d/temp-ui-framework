@@ -13,9 +13,6 @@ const demoLeftNavItems = [
   }
 ]
 
-
-
-
 @Component({
   selector: 'app-root',
   template: `<router-outlet></router-outlet>`,

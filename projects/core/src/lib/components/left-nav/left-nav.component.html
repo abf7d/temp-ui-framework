@@ -1,26 +1,3 @@
-<!-- <div class="secondary-left-nav">
-
-    <div class="btn-container file-names">
-        <div class="logo">
-            <img class="logo-img" src="{{header.img}}" />
-            <div class="menu-entry-txt"> {{header.text}} </div>
-        </div>
-        <ul class="names" *ngFor="let item of items">
-            <li *ngFor="let entry of item.group" [class.active]="entry.selected">
-                <div> <img src="{{entry.image}}" /> </div>
-                <div class="menu-entry-txt">{{entry.text}} test</div>
-            </li>
-        </ul>
-    </div>
-    <div class="btn-container avatar-holder">
-        <div> <img class="user-circle" src="/ui/assets/user-circle.png" />
-        </div>
-        <div>
-            Hello!
-        </div>
-    </div>
-</div> -->
-
 
 
 <div class="secondary-left-nav">
@@ -30,33 +7,56 @@
             <img class="logo-img" src="{{header.img}}" />
             <div class="menu-entry-txt"> {{header.text}} </div>
         </div>
-        <cdk-tree class="names" [dataSource]="dataSource" [treeControl]="treeControl">
+
+        <cdk-tree 
+            [dataSource]="dataSource" 
+            [treeControl]="treeControl"
+            class="names">
+
             <!-- This is the tree node template for leaf nodes -->
-            <cdk-tree-node [style.paddingLeft]="getPadding(node.level)" *cdkTreeNodeDef="let node" cdkTreeNodePadding
-                [style.display]="shouldRender(node) ? 'flex' : 'none'" class="example-tree-node"
+            <cdk-tree-node 
+                [style.paddingLeft]="getPadding(node.level)" 
+                [style.display]="shouldRender(node) ? 'flex' : 'none'" 
+                *cdkTreeNodeDef="let node"
+                class="example-tree-node"
                 class="{{getClass(node.level)}}">
-                <div class="selection-open" src="http://localhost:8080/ui/assets/eye.png" mat-icon-button
-                    cdkTreeNodeToggle [attr.aria-label]="'toggle ' + node.filename"
+            
+                <div 
+                    [style.visibility]="node.expandable ? 'visible' : 'hidden'"
                     (click)="node.isExpanded = !node.isExpanded"
-                    [style.visibility]="node.expandable ? 'visible' : 'hidden'">
-                    <fa-icon class="drawer" [icon]="treeControl.isExpanded(node) ? faAngleDown : faAngleRight ">
+                    class="selection-open" 
+                    src="http://localhost:8080/ui/assets/eye.png" >
+                    
+                    <fa-icon 
+                        [icon]="treeControl.isExpanded(node) ? faAngleDown : faAngleRight"
+                        class="drawer">
                     </fa-icon>
                 </div>
 
-                <div> <img src="http://localhost:8080/ui/assets/eye.png" /> </div>
+                <div> 
+                    <img src="http://localhost:8080/ui/assets/eye.png" /> 
+                </div>
                 <div class="menu-entry-txt">
                     {{node.name}}
                 </div>
             </cdk-tree-node>
+            
             <!-- This is the tree node template for expandable nodes -->
-            <cdk-tree-node [style.paddingLeft]="getPadding(node.level)" *cdkTreeNodeDef="let node; when: hasChild" cdkTreeNodePadding
-                [style.display]="shouldRender(node) ? 'flex' : 'none'" class="example-tree-node"
+            <cdk-tree-node 
+                [style.display]="shouldRender(node) ? 'flex' : 'none'"
+                [style.paddingLeft]="getPadding(node.level)" 
+                *cdkTreeNodeDef="let node; when: hasChild" 
                 class="{{getClass(node.level)}}">
-                <div class="selection-open" src="http://localhost:8080/ui/assets/eye.png" mat-icon-button
-                    cdkTreeNodeToggle [attr.aria-label]="'toggle ' + node.filename"
+
+                <div 
+                    [style.visibility]="node.expandable ? 'visible' : 'hidden'"
                     (click)="node.isExpanded = !node.isExpanded"
-                    [style.visibility]="node.expandable ? 'visible' : 'hidden'">
-                    <fa-icon class="drawer" [icon]="treeControl.isExpanded(node) ? faAngleDown : faAngleRight ">
+                    src="http://localhost:8080/ui/assets/eye.png"
+                    class="selection-open" >
+
+                    <fa-icon 
+                        class="drawer" 
+                        [icon]="treeControl.isExpanded(node) ? faAngleDown : faAngleRight ">
                     </fa-icon>
                 </div>
                 <div> <img src="http://localhost:8080/ui/assets/eye.png" /> </div>
@@ -66,11 +66,4 @@
             </cdk-tree-node>
         </cdk-tree>
     </div>
-    <!-- <div class="btn-container avatar-holder">
-        <div> <img class="user-circle" src="http://localhost:8080/ui/assets/user-circle.png" />
-        </div>
-        <div>
-            Hello!
-        </div>
-    </div> -->
-</div>
+ </div>

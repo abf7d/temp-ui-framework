@@ -115,6 +115,7 @@ sc-vision-left-nav {
 
 :host::ng-deep .outlet > :nth-child(2) {
   display: flex;
+  flex: 1;
 }
 
 .right-container {

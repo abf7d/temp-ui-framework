@@ -35,9 +35,6 @@ import { Theme } from 'core/lib/common/types';
         "--heading-font-size": "21px",
         "--heading-line-height": "2",
         "--heading-img-width": "30px",
-        "--tenant-display": "block",
-        "--right-nav-display": "none",
-        "--flex-display": "flex"
     }
   };
   
@@ -78,8 +75,5 @@ import { Theme } from 'core/lib/common/types';
         "--heading-font-size": "18px",
         "--heading-line-height": "2",
         "--heading-img-width": "30px",
-        "--tenant-display": "none",
-        "--right-nav-display": "flex",
-        "--flex-display": "none"
     }
   };

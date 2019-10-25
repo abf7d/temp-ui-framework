@@ -14,6 +14,7 @@ import { EventService } from './services/event.service';
 import { CdkTreeModule } from '@angular/cdk/tree';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ThemeService } from './services/theme.service';
+import { LeftNavListComponent } from './components/left-nav-list/left-nav-list.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -32,10 +33,14 @@ import { ThemeService } from './services/theme.service';
     RightNavComponent,
     HeaderComponent,
     TenantNavComponent,
+    LeftNavListComponent,
   ],
   providers: [
     EventService,
     ThemeService
+  ],
+  exports: [
+    LeftNavComponent
   ],
   entryComponents: [
   ]

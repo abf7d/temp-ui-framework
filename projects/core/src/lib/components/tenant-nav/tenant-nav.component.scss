@@ -7,7 +7,6 @@
 *{
     color: var(--left-nav-font-color);
 }
-//https://www.youtube.com/watch?v=BALaj39rbZE
 
 .tenant-list li {
     
@@ -16,11 +15,7 @@
 }
     
 .tenant-list {
-    // height: 50px;
     padding: 6px;
-    
-    display: var(--tenant-display);
-
     flex-direction: column;
     padding-left: 4px;
 }
@@ -56,4 +51,7 @@
 
   .tenant-btn-container.selected {
       background-color: var(--active-menu-entry-bg-color);
+  }
+  .tenant-btn-container {
+    padding: 1px;
   }

@@ -38,7 +38,12 @@
 
 <!-- Content for the middle of the main center component -->
 <div class="main-content">
+    <div class="component-nav">
+        <a class="" [routerLink]="['/list']">Labshare Components</a>
+        <a class="" [routerLink]="['/']" >Polus Components</a>
+    </div>
     <button class="btn theme-btn" (click)="changeTheme()">Change Theme</button>
+    
     <div class="search-toggle temp-content" [hidden]="hideContent">
         <div>Main Content Area</div>
     </div>
@@ -47,6 +52,12 @@
             <router-outlet name="center-main"></router-outlet>
         </div>
     </div>
+    <!-- <ls-ui-left-nav>
+        <div left-dec>
+            Test
+        </div>
+    </ls-ui-left-nav> -->
+
 </div>
 
 <!-- Footer for center component, should be its own component -->

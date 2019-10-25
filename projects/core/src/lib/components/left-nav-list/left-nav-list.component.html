@@ -1,0 +1,22 @@
+<div class="secondary-left-nav">
+    <div class="btn-container file-names">
+
+        
+        <div class="logo">
+            <img class="logo-img" src="{{header.img}}" />
+            <div class="menu-entry-txt"> {{header.text}} </div>
+        </div>
+        
+        
+
+        <ul class="names" *ngFor="let item of items">
+            <li *ngFor="let entry of item.group" [class.active]="entry.selected">
+                <div> <img src="{{entry.image}}" /> </div>
+                <div class="menu-entry-txt">{{entry.text}}</div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+

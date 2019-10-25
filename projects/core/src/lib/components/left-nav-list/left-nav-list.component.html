@@ -9,8 +9,8 @@
         
         
 
-        <ul class="names" *ngFor="let item of items">
-            <li *ngFor="let entry of item.group" [class.active]="entry.selected">
+        <ul class="names">
+            <li *ngFor="let entry of config.group" [class.active]="entry.selected">
                 <div> <img src="{{entry.image}}" /> </div>
                 <div class="menu-entry-txt">{{entry.text}}</div>
             </li>

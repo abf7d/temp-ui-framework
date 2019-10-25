@@ -1,7 +1,7 @@
 
 
 <div class="secondary-left-nav">
-
+    
         <ng-content select="[left-dec]">
             </ng-content>
 
@@ -11,7 +11,8 @@
             <img class="logo-img" src="{{header.img}}" />
             <div class="menu-entry-txt"> {{header.text}} </div>
         </div>
-
+        <div class="top-window">
+        <div class="window">
         <cdk-tree 
             [dataSource]="dataSource" 
             [treeControl]="treeControl"
@@ -23,8 +24,9 @@
                 [style.display]="shouldRender(node) ? 'flex' : 'none'" 
                 *cdkTreeNodeDef="let node"
                 class="example-tree-node"
-                class="{{getClass(node.level)}}">
-            
+                (click)="leafClick(node)"
+                >
+                <!-- class="{{getClass(node.level)}}" -->
                 <div 
                     [style.visibility]="node.expandable ? 'visible' : 'hidden'"
                     (click)="node.isExpanded = !node.isExpanded"
@@ -40,7 +42,7 @@
                 <div> 
                     <img src="http://localhost:8080/ui/assets/eye.png" /> 
                 </div>
-                <div class="menu-entry-txt">
+                <div class="menu-entry-txt" >
                     {{node.name}}
                 </div>
             </cdk-tree-node>
@@ -50,7 +52,8 @@
                 [style.display]="shouldRender(node) ? 'flex' : 'none'"
                 [style.paddingLeft]="getPadding(node.level)" 
                 *cdkTreeNodeDef="let node; when: hasChild" 
-                class="{{getClass(node.level)}}">
+               >
+               <!-- class="{{getClass(node.level)}}" -->
 
                 <div 
                     [style.visibility]="node.expandable ? 'visible' : 'hidden'"
@@ -64,10 +67,11 @@
                     </fa-icon>
                 </div>
                 <div> <img src="http://localhost:8080/ui/assets/eye.png" /> </div>
-                <div class="menu-entry-txt">
+                <div class="menu-entry-txt" >
                     {{node.name}}
                 </div>
             </cdk-tree-node>
         </cdk-tree>
+    </div></div>
     </div>
  </div>

@@ -8,9 +8,9 @@ import { EventService } from '../../services/event.service';
 })
 export class LeftNavListComponent {
 
-  public items = [];
+  public config: any;
   public header = { img: "http://localhost:8080/ui/assets/eye.png", text: "Selected Heirarchy" }
   constructor(eventService: EventService) {
-    eventService.get('left-nav').subscribe(val => this.items = val);
+    eventService.get('left-nav').subscribe(val => this.config = val);
   }
 }

@@ -1,61 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { EventService } from '../../services/event.service';
 import { ArrayDataSource } from '@angular/cdk/collections';
 import { FlatTreeControl } from '@angular/cdk/tree';
 import { faAngleRight, faAngleDown } from '@fortawesome/free-solid-svg-icons';
-
-// Tree data is for Angular Material
-const TREE_DATA: ExampleFlatNode[] = [
-  {
-    name: 'Fruit',
-    expandable: true,
-    level: 0,
-  }, {
-    name: 'Apple',
-    expandable: false,
-    level: 1,
-  }, {
-    name: 'Banana',
-    expandable: false,
-    level: 1,
-  }, {
-    name: 'Fruit loops',
-    expandable: false,
-    level: 1,
-  }, {
-    name: 'Vegetables',
-    expandable: true,
-    level: 0,
-  }, {
-    name: 'Green',
-    expandable: true,
-    level: 1,
-  }, {
-    name: 'Broccoli',
-    expandable: true,
-    level: 2,
-  }, {
-    name: 'Next One Long Name',
-    expandable: false,
-    level: 3,
-  }, {
-    name: 'Brussel sprouts',
-    expandable: false,
-    level: 2,
-  }, {
-    name: 'Orange',
-    expandable: true,
-    level: 1,
-  }, {
-    name: 'Pumpkins',
-    expandable: false,
-    level: 2,
-  }, {
-    name: 'Carrots',
-    expandable: false,
-    level: 2,
-  }
-];
+import { Identifier } from 'estree';
 
 // For Angular Material
 /** Flat node with expandable and level information */
@@ -67,32 +15,76 @@ interface ExampleFlatNode {
 }
 
 
-
+interface INavConfig {
+  group: INavItem[];
+}
+interface INavItem {
+  id: string;
+  text: string;
+  image: string;
+  selected: boolean;
+  event: INavEvent;
+  children: INavItem[]
+}
+interface INavEvent {
+  type: string;
+  id: string;
+  name: string;
+}
 @Component({
   selector: 'ls-ui-left-nav',
   templateUrl: './left-nav.component.html',
   styleUrls: ['./left-nav.component.scss']
 })
-export class LeftNavComponent {
+export class LeftNavComponent implements OnInit {
 
-  public items = [];
+
+  public config: INavConfig;
+  public treeData: any[];
   public header = { img: "http://localhost:8080/ui/assets/eye.png", text: "Selected Heirarchy" }
-  constructor(eventService: EventService) {
-    eventService.get('left-nav').subscribe(val => this.items = val);
+  constructor(private eventService: EventService) {
+
+  }
+  ngOnInit(): void {
+    this.eventService.get('left-nav').subscribe(val => {
+      if (val !== null) {
+        this.treeData = this.convertConfigToDatasource(val);
+        this.dataSource = new ArrayDataSource(this.treeData);
+      }
+    });
   }
 
+  convertConfigToDatasource(config: INavConfig) {
+    const data = [];
+    this.convertNavItems(config.group, 0, data);
+    return data;
+  }
+  convertNavItems(items: INavItem[], level, data: any[]) {
+    for (const item of items) {
+      let treeItem = {
+        name: item.text,
+        expandable: item.children !== undefined && item.children.length > 0,
+        level: level,
+        config: item
+      }
+      data.push(treeItem);
+      if (item.children !== undefined) {
+        this.convertNavItems(item.children, level + 1, data);
+      }
+    }
+  }
   faAngleRight = faAngleRight;
   faAngleDown = faAngleDown;
   treeControl = new FlatTreeControl<ExampleFlatNode>(
     node => node.level, node => node.expandable);
-  dataSource = new ArrayDataSource(TREE_DATA);
+  dataSource: any;
 
   hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
   getParentNode(node: ExampleFlatNode) {
-    const nodeIndex = TREE_DATA.indexOf(node);
+    const nodeIndex = this.treeData.indexOf(node);
     for (let i = nodeIndex - 1; i >= 0; i--) {
-      if (TREE_DATA[i].level <= node.level - 1) {
-        return TREE_DATA[i];
+      if (this.treeData[i].level <= node.level - 1) {
+        return this.treeData[i];
       }
     }
     return null;
@@ -118,5 +110,9 @@ export class LeftNavComponent {
   }
   getPadding(level) {
     return (level * 26) + 'px';
+  }
+  leafClick(node) {
+    const eventStream = this.eventService.get(node.config.event.name);
+    eventStream.next(node.config.event.id);
   }
 }

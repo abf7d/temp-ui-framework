@@ -76,12 +76,13 @@
 
 
   .secondary-left-nav {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: flex-start;
+    
   }
   .secondary-left-nav > div {
-    width: 100%;
+    // width: 100%;
   }
 
   .btn-container {
@@ -188,3 +189,26 @@
 }
 
 // .cdk-tree-node {margin-left:12px}
+
+.window {
+  width: auto;
+  white-space: nowrap;
+  width: var(--content-menu-width); 
+
+}
+.top-window {
+  width: max-content;
+  width: var(--content-menu-width);
+  overflow: auto;
+  flex: 1;
+  
+}
+.secondary-left-nav {
+ display:flex;
+}
+.file-names {
+  padding-bottom: 0px;
+}
+.menu-entry-txt {
+  padding-right: 20px;
+}

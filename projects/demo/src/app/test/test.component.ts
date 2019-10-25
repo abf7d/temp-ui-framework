@@ -18,7 +18,7 @@ export class TestComponent {
         this.hideContent = !this.hideContent;
       }
     });
-    this.selectedDirectory = "";
+    this.selectedDirectory = "Click left nav directory leaf";
     this.eventService.get('left-nav-click').subscribe ( val => { this.selectedDirectory = val;
       console.log(val);
     });

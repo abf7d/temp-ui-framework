@@ -1,0 +1,30 @@
+* {
+  color: var(--main-text-color);
+}
+
+.catalog {
+  justify-content: center;
+  flex: 1;
+  display: var(--right-nav-display);
+}
+.catalog div {
+  margin: 7px;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 0px 40px 0px 40px;
+  font-weight: bold;
+}
+
+.catalog div.active {
+  border: 1px solid var(--main-text-color);
+  background-color: var(--active-menu-color);
+}
+.catalog {
+  height: 44px;
+  background-color: var(--main-container-color); 
+}
+
+.catalog {
+  margin: 0 2px 2px 1px;
+  border: 1px solid var(--color-border); 
+}

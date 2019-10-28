@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
 import { EventService } from '../../services/event.service';
-
-
-
-
 import { ArrayDataSource } from '@angular/cdk/collections';
 import { FlatTreeControl } from '@angular/cdk/tree';
-
+import { faAngleRight, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 // Tree data is for Angular Material
 const TREE_DATA: ExampleFlatNode[] = [
@@ -36,8 +32,12 @@ const TREE_DATA: ExampleFlatNode[] = [
     level: 1,
   }, {
     name: 'Broccoli',
-    expandable: false,
+    expandable: true,
     level: 2,
+  }, {
+    name: 'Next One Long Name',
+    expandable: false,
+    level: 3,
   }, {
     name: 'Brussel sprouts',
     expandable: false,
@@ -81,30 +81,42 @@ export class LeftNavComponent {
     eventService.get('left-nav').subscribe(val => this.items = val);
   }
 
-
-  // Below this point is all Angular Material
+  faAngleRight = faAngleRight;
+  faAngleDown = faAngleDown;
   treeControl = new FlatTreeControl<ExampleFlatNode>(
     node => node.level, node => node.expandable);
-
   dataSource = new ArrayDataSource(TREE_DATA);
 
   hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
-
   getParentNode(node: ExampleFlatNode) {
     const nodeIndex = TREE_DATA.indexOf(node);
-
     for (let i = nodeIndex - 1; i >= 0; i--) {
-      if (TREE_DATA[i].level === node.level - 1) {
+      if (TREE_DATA[i].level <= node.level - 1) {
         return TREE_DATA[i];
       }
     }
-
     return null;
   }
-
   shouldRender(node: ExampleFlatNode) {
-    const parent = this.getParentNode(node);
-    return !parent || parent.isExpanded;
-  }
 
+    let parent = this.getParentNode(node);
+    let render = (!parent || parent.isExpanded);
+    while (parent) {
+      parent = this.getParentNode(parent);
+      render = render && ((parent && parent.isExpanded) || (!parent));
+    }
+    return render;
+  }
+  getColor(level) {
+    return '#' + (444 - (+level * 111));
+  }
+  getClass(level) {
+    if (level !== 0) {
+      return 'name-color';
+    }
+    return '';
+  }
+  getPadding(level) {
+    return (level * 26) + 'px';
+  }
 }

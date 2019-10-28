@@ -80,7 +80,7 @@ li > ul.drop-menu {
 }
 .nav-top-content {
   height: 74px;
-  background-color: $main-container-color;
+  background-color: var(--main-container-color); 
   flex: 1;
 }
 .nav-top-content {

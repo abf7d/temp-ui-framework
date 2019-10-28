@@ -1,23 +1,24 @@
 @import "../../../assets/variables.scss";
 
   * {
-    color: $left-nav-font-color;
-    font-size: $menu-font-size;
-    font-family: $menu-font-family;
+    color: var(--left-nav-font-color);
+    font-size: var(--menu-font-size);
+    font-family: var(--menu-font-family);
   }
 
   .second-left-nav {
     width: 50px;
-    background-color: $main-container-color; //#3e3e3e;
+     background-color: var(--main-container-color); //#3e3e3e;
   }
   .secondary-left-nav {
-    width: $content-menu-width;
-    background-color: $main-container-color; //#3e3e3e;
+    width: var(--content-menu-width);
+    background-color: var(--main-container-color);
+    // background-color: var(--main-container-color; //#3e3e3e;
   }
   /* margins */
   .second-left-nav {
     margin: 0 2px 2px 1px;
-    border: 1px solid $color-border; //black;
+    border: 1px solid var(--color-border); //black;
   }
 
   /* Details */
@@ -40,7 +41,7 @@
 
   .side-toggles {
     display: flex;
-    background: $side-toggles;
+    background: var(--side-toggles);
   }
 
   .nih-button {
@@ -56,7 +57,7 @@
   .btn-container {
     display: flex;
     padding: 14px 0 14px 0;
-    border-bottom: 2px solid $color-border;
+    border-bottom: 2px solid var(--color-border);
   }
   .file-names {
     padding: 0px 0 14px 0;
@@ -79,7 +80,7 @@
     flex-direction: column;
     align-items: flex-start;
   }
-  .secondary-left-nav > * {
+  .secondary-left-nav > div {
     width: 100%;
   }
 
@@ -100,41 +101,53 @@
     list-style: none;
   }
   .names img {
-    width: $icon-width;
-    margin-left: $icon-left-margin;
+    width: var(--icon-width);
+    margin-left: var(--icon-left-margin);
   }
-  .names li {
+  .names > * {
     // padding-left: 40px;
     // background-image: url("../../../../assets/csv-file.png");
     background-size: 21px;
     background-repeat: no-repeat;
     padding-bottom: 2px;
-    margin-top: 7px;
+    // margin-top: 7px;
     display: flex;
-    line-height: $menu-line-height; //29px;
-    padding: $menu-li-padding;
-    //line-height: $menu-line-height;
-    text-transform: $menu-text-transform;
+    line-height: var(--menu-line-height); //29px;
+    padding: var(--menu-li-padding);
+    //line-height: var(--menu-line-height;
+    text-transform: var(--menu-text-transform);
+  }
+
+  .name-color-0{
+    background-color: brightness(1);
+  }
+  .name-color{
+    background-color: black;
+    opacity: .6;
+  }
+  .name-color-2{
+    background-color: black;
+    opacity: .6;
   }
 
   .single-btn {
     padding-left: 12px;
   }
   .menu-entry-txt {
-    padding-left: $space-between-icon-text; //: 16px;
+    padding-left: var(--space-between-icon-text); //: 16px;
     flex: 1;
   }
 
   .names {
-     border-bottom: $menu-section-border-botom; 
-     padding-bottom: 25px;
+     border-bottom: var(--menu-section-border-botom); 
+     padding-bottom: 7px;
 
   }
 
   .active {
-      background-color: $active-menu-entry-bg-color; //#f79f2c;
+      background-color: var(--active-menu-entry-bg-color); //#f79f2c;
      .menu-entry-txt {
-      color: $active-menu-entry-txt; // #210a58
+      color: var(--active-menu-entry-txt); // #210a58
      }
   }
   .selection-open {
@@ -143,14 +156,14 @@
   }
   .logo {
     // height: 100px;
-    background-color: $heading-bg-color; // #210a58;
-    color: $heading-text-color;
+    background-color: var(--heading-bg-color); // #210a58;
+    color: var(--heading-text-color);
     display: flex;
    // justify-self: center;
     align-items: center;
 
 
-    line-height: $heading-line-height;
+    line-height: var(--heading-line-height);
     
     padding: 10px 12px;
     
@@ -158,14 +171,20 @@
     .menu-entry-txt {
     //  padding-left: 17px;
    //   font-size: 23px;
-   font-size: $heading-font-size;
+   font-size: var(--heading-font-size);
     }
-    .logo-img { width: $heading-img-width;
-      margin-left: $icon-left-margin;}
+    .logo-img { width: var(--heading-img-width);
+      margin-left: var(--icon-left-margin);}
     // .logo-img { width: 50px;}
   }
 
   .heading{
-    background-color: $heading-bg-color;
-    color: $heading-text-color;
+    background-color: var(--heading-bg-color);
+    color: var(--heading-text-color);
   }
+.drawer{
+  padding-right: 13px;
+  padding-left: 13px;
+}
+
+// .cdk-tree-node {margin-left:12px}

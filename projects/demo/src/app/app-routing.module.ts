@@ -1,6 +1,7 @@
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent, LeftNavComponent, HeaderComponent, RightNavComponent, TenantNavComponent } from 'core';
 import { TestComponent } from './test/test.component';
+import { CenterHeaderComponent } from './center-header/center-header.component';
 
 const routes: Routes = [
   {
@@ -19,7 +20,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        component: TestComponent, // todo: for now 
+        component: TestComponent, 
         outlet: 'center'
       },
       {
@@ -34,7 +35,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        component: HeaderComponent,
+        component: CenterHeaderComponent,
         outlet: 'center-header'
       }
     ]

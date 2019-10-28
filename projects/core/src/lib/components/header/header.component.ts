@@ -9,9 +9,6 @@ import { EventService } from '../../services/event.service';
 export class HeaderComponent implements OnInit {
   config: any;
   ngOnInit() {
-      // Put this in config service with observable
-     // let dynamic = data.items.find(d => d.id === "dynamic-config");
-     // let componentConfig = dynamic.components.find(c => c.name === "LsHeaderComponent");
       this.config = {
                     "style": {},
                     "logo": "http://localhost:8080/ui/assets/polus-logo.png",
@@ -21,7 +18,7 @@ export class HeaderComponent implements OnInit {
                         { "text": "three", "type":"ico", "src":"http://localhost:8080/ui/assets/zoom.png" }
                     ],
                     "rightNavList": [
-                        { "text": "search-click", "type":"btn", "src":"http://localhost:8080/ui/assets/zoom.png" },
+                        { "text": "search-click", "type":"btn", "src":"http://localhost:8080/ui/assets/zoom.png", "includeObj": false },
                         { "text": "one", "type":"text" },
                         { "text": "two", "type":"text" },
                         { "text": "menu", "type":"menu", 
@@ -39,18 +36,15 @@ export class HeaderComponent implements OnInit {
                         { "text": "two", "type":"img", "src":"http://localhost:8080/ui/assets/rect.png" },
                         { "text": "menu", "type":"img", "src":"http://localhost:8080/ui/assets/poly.png"  }
                     ]
-    }// componentConfig.config;
-     // console.log('Check route resolver data')
-     // console.log(data)
+    }
   }
   constructor(private eventService: EventService ) {
   
   }
 
-  click(name, id) {
+  click(name, id, configObj) {
     console.log('click' + ' ' + id);
     let stream = this.eventService.get(id);
-    stream.next("");
+    stream.next(configObj);
   }
-
 }

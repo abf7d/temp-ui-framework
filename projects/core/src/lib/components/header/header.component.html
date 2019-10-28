@@ -14,7 +14,7 @@
         <div *ngFor="let item of list">
             <div *ngIf="item.type === 'text'"> {{item.text}}</div>
             <img *ngIf="item.type === 'img'" src="{{item.src}}" />
-            <img *ngIf="item.type === 'btn'" (click)="click('header-click',item.text)" src="{{item.src}}" />
+            <img *ngIf="item.type === 'btn'" (click)="click('header-click',item.text, item.includeObj)" src="{{item.src}}" />
             <img *ngIf="item.type === 'ico'" src="{{item.src}}" />
             <ul *ngIf="item.type === 'menu'" class="drop-down-container">
                 <li class="submenu">

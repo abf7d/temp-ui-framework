@@ -21,7 +21,7 @@ export class TestComponent {
     this.selectedDirectory = "Click left nav";
     this.eventService.get('left-nav-click').subscribe ( val => { 
       if (val){
-        this.selectedDirectory = val;
+        this.selectedDirectory = val.id;
       }
       console.log(val);
     });

@@ -113,6 +113,6 @@ export class LeftNavComponent implements OnInit {
   }
   leafClick(node) {
     const eventStream = this.eventService.get(node.config.event.name);
-    eventStream.next(node.config.event.id);
+    eventStream.next(node.config.event);
   }
 }

@@ -30,8 +30,15 @@
 }
 .main-section {
   flex: 1;
-  display: flex;
 }
+
+@media screen and (min-width: 640px){
+  .main-section {
+      display: flex;
+  }    
+}
+
+
 div.global {
   height: 75px;
 }
@@ -128,4 +135,10 @@ sc-vision-left-nav {
 
 :host::ng-deep .tenant > :nth-child(2) {
   flex-direction: column;
+}
+
+@media screen and (min-width: 640px){
+  .flex-container {
+      display: flex;
+  }    
 }

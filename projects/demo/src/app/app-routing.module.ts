@@ -51,7 +51,6 @@ const routes: Routes = [
         component: TestComponent,
         outlet: 'center'
       },
-     
       {
         path: '',
         component: HeaderComponent,
@@ -61,6 +60,19 @@ const routes: Routes = [
         path: '',
         component: TenantNavComponent,
         outlet: 'tenant'
+      },
+
+
+
+      {
+        path: 'test',
+        component: RightNavComponent,
+        outlet: 'right'
+      }
+      , {
+        path: 'test2',
+        component: LeftNavComponent,
+        outlet: 'right'
       }
     ]
   }

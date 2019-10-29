@@ -41,6 +41,8 @@
     <div class="component-nav">
         <a class="" [routerLink]="['/list']">Labshare Components</a>
         <a class="" [routerLink]="['/']" >Polus Components</a>
+        <a [routerLink]="['/list',{outlets:{right:'test'}}]">Same Page Swap Components</a>
+        <a [routerLink]="['/list',{outlets:{right:'test2'}}]">Same Page Swap Components2</a>
     </div>
     <button class="btn theme-btn" (click)="changeTheme()">Change Theme</button>
     

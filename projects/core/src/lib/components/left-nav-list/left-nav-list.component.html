@@ -10,7 +10,7 @@
         
 
         <ul class="names">
-            <li *ngFor="let entry of config.group" [class.active]="entry.selected">
+            <li *ngFor="let entry of config.group" [class.active]="entry.selected"  (click)="leafClick(entry)">
                 <div> <img src="{{entry.image}}" /> </div>
                 <div class="menu-entry-txt">{{entry.text}}</div>
             </li>

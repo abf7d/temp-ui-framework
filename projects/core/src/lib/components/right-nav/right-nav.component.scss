@@ -14,7 +14,7 @@
   background-color: var(--main-container-color);
   flex: 1;
   flex-direction: column;
-  display: var(--right-nav-display);
+  display: flex;
 }
 .right-container {
   display: flex;

@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tenant-nav.component.scss']
 })
 export class TenantNavComponent implements OnInit {
-
-  constructor() { }
+  showMenu: boolean;
+  constructor() { 
+    this.showMenu = false;
+  }
 
   ngOnInit() {
   }
-
+  expandMenu () {
+    console
+   this.showMenu = !this.showMenu;
+  }
 }

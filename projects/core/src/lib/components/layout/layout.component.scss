@@ -4,6 +4,10 @@
   display: flex;
   flex-direction: column;
 }
+
+@mixin flex-row {
+  display:flex
+}
 /* theme's style rules */
 #main-container {
   display: flex;
@@ -19,10 +23,15 @@
   border: 1px solid $color-border;
 }
 
+.page {
+  display: flex;
+}
+
 /* new layout */
 .wrapper {
   height: 100vh;
   @include flex-column;
+  flex: 1;
 }
 .nav-top-content {
   height: 74px;
@@ -122,7 +131,7 @@ sc-vision-left-nav {
 
 :host::ng-deep .outlet > :nth-child(2) {
   display: flex;
-  flex: 1;
+  // flex: 1;
 }
 
 .right-container {

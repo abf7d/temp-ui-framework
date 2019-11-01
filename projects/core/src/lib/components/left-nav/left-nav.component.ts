@@ -4,7 +4,8 @@ import { ArrayDataSource } from '@angular/cdk/collections';
 import { FlatTreeControl } from '@angular/cdk/tree';
 import { faAngleRight, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { Identifier } from 'estree';
-
+import {MenuItem} from 'primeng/api';
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 // For Angular Material
 /** Flat node with expandable and level information */
 interface ExampleFlatNode {
@@ -45,14 +46,161 @@ export class LeftNavComponent implements OnInit {
   constructor(private eventService: EventService) {
 
   }
-  ngOnInit(): void {
-    this.eventService.get('left-nav').subscribe(val => {
-      if (val !== null) {
-        this.treeData = this.convertConfigToDatasource(val);
-        this.dataSource = new ArrayDataSource(this.treeData);
+
+  items; //: MenuItem[];
+
+    ngOnInit() {
+      this.eventService.get('left-nav').subscribe(val => {
+            if (val !== null) {
+              this.treeData = this.convertConfigToDatasource(val);
+              this.dataSource = new ArrayDataSource(this.treeData);
+            }
+          });
+        this.items =
+
+        
+          [
+              {
+                  "label": "Documents",
+                  "data": "Documents Folder",
+                  "expandedIcon": "fa fa-folder-open",
+                  "collapsedIcon": "fa fa-folder",
+                  "children": [{
+                          "label": "Work",
+                          "data": "Work Folder",
+                          "expandedIcon": "fa fa-folder-open",
+                          "collapsedIcon": "fa fa-folder",
+                          "children": [{"label": "Expenses.doc", "icon": "fa fa-file-word-o", "data": "Expenses Document"}, {"label": "Resume.doc", "icon": "fa fa-file-word-o", "data": "Resume Document"}]
+                      },
+                      {
+                          "label": "Home",
+                          "data": "Home Folder",
+                          "expandedIcon": "fa fa-folder-open",
+                          "collapsedIcon": "fa fa-folder",
+                          "children": [{"label": "Invoices.txt", "icon": "fa fa-file-word-o", "data": "Invoices for this month"}]
+                      }]
+              },
+              {
+                  "label": "Pictures",
+                  "data": "Pictures Folder",
+                  "expandedIcon": "fa fa-folder-open",
+                  "collapsedIcon": "fa fa-folder",
+                  "children": [
+                      {"label": "barcelona.jpg", "icon": "fa fa-file-image-o", "data": "Barcelona Photo"},
+                      {"label": "logo.jpg", "icon": "fa fa-file-image-o", "data": "PrimeFaces Logo"},
+                      {"label": "primeui.png", "icon": "fa fa-file-image-o", "data": "PrimeUI Logo"}]
+              },
+              {
+                  "label": "Movies",
+                  "data": "Movies Folder",
+                  "expandedIcon": "fa fa-folder-open",
+                  "collapsedIcon": "fa fa-folder",
+                  "children": [{
+                          "label": "Al Pacino",
+                          "data": "Pacino Movies",
+                          "children": [{"label": "Scarface", "icon": "fa fa-file-video-o", "data": "Scarface Movie"}, {"label": "Serpico", "icon": "fa fa-file-video-o", "data": "Serpico Movie"}]
+                      },
+                      {
+                          "label": "Robert De Niro",
+                          "data": "De Niro Movies",
+                          "children": [{"label": "Goodfellas", "icon": "fa fa-file-video-o", "data": "Goodfellas Movie"}, {"label": "Untouchables", "icon": "fa fa-file-video-o", "data": "Untouchables Movie"}]
+                      }]
+              }
+          ];
+        //  [
+        //     {
+        //         label: 'File',
+        //         icon: 'pi pi-fw pi-file',
+        //         items: [{
+        //                 label: 'New', 
+        //                 icon: 'pi pi-fw pi-plus',
+        //                 items: [
+        //                     {label: 'Project'},
+        //                     {label: 'Other'},
+        //                 ]
+        //             },
+        //             {label: 'Open'},
+        //             {separator:true},
+        //             {label: 'Quit'}
+        //         ]
+        //     },
+        //     {
+        //         label: 'Edit',
+        //         icon: 'pi pi-fw pi-pencil',
+        //         items: [
+        //             {label: 'Delete', icon: 'pi pi-fw pi-trash'},
+        //             {label: 'Refresh', icon: 'pi pi-fw pi-refresh'}
+        //         ]
+        //     },
+        //     {
+        //         label: 'Help',
+        //         icon: 'pi pi-fw pi-question',
+        //         items: [
+        //             {
+        //                 label: 'Contents'
+        //             },
+        //             {
+        //                 label: 'Search', 
+        //                 icon: 'pi pi-fw pi-search', 
+        //                 items: [
+        //                     {
+        //                         label: 'Text', 
+        //                         items: [
+        //                             {
+        //                                 label: 'Workspace'
+        //                             }
+        //                         ]
+        //                     },
+        //                     {
+        //                         label: 'File'
+        //                     }
+        //             ]}
+        //         ]
+        //     },
+        //     {
+        //         label: 'Actions',
+        //         icon: 'pi pi-fw pi-cog',
+        //         items: [
+        //             {
+        //                 label: 'Edit',
+        //                 icon: 'pi pi-fw pi-pencil',
+        //                 items: [
+        //                     {label: 'Save', icon: 'pi pi-fw pi-save'},
+        //                     {label: 'Update', icon: 'pi pi-fw pi-save'},
+        //                 ]
+        //             },
+        //             {
+        //                 label: 'Other',
+        //                 icon: 'pi pi-fw pi-tags',
+        //                 items: [
+        //                     {label: 'Delete', icon: 'pi pi-fw pi-minus'}
+        //                 ]
+        //             }
+        //         ]
+        //     },
+        //     {separator:true},
+        //     {
+        //         label: 'Quit', icon: 'pi pi-fw pi-times'
+        //     }
+        // ];
+    }
+
+    drop(event: CdkDragDrop<string[]>) {
+      if (event.container.id === event.previousContainer.id) {
+        // move inside same list
+        moveItemInArray(/*this.list*/ this.treeData, event.previousIndex, event.currentIndex);
+      } else {
+        // move between lists
       }
-    });
   }
+  // ngOnInit(): void {
+  //   this.eventService.get('left-nav').subscribe(val => {
+  //     if (val !== null) {
+  //       this.treeData = this.convertConfigToDatasource(val);
+  //       this.dataSource = new ArrayDataSource(this.treeData);
+  //     }
+  //   });
+  // }
 
   convertConfigToDatasource(config: INavConfig) {
     const data = [];

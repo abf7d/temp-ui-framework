@@ -1,11 +1,57 @@
 
 
-<div class="secondary-left-nav">
+<div class="secondary-left-nav" ngResizable [rzHandles]="'e'" position="'0,0'">
     
         <ng-content select="[left-dec]">
             </ng-content>
 
+
+
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
             
+
+
+
+            <!-- <div  cdkDropList id="list-1" cdkDropListConnectedTo="list-2" (cdkDropListDropped)="drop($event)">
+                <div *ngFor="let item of treeData" cdkDrag>{{item.name}}</div>
+            </div> -->
+            
+          
+            <!-- <div
+            cdkDropList
+            #todoList="cdkDropList"
+            [cdkDropListData]="treeData"
+            [cdkDropListConnectedTo]="[doneList]"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+            <div class="example-box" *ngFor="let item of treeData" cdkDrag>{{item.name}}</div>
+          </div>
+
+          <div
+    cdkDropList
+    #doneList="cdkDropList"
+    [cdkDropListData]="treeData"
+    [cdkDropListConnectedTo]="[todoList]"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let item of treeData" cdkDrag>{{item.name}}</div>
+  </div>
+ -->
+
     <div class="btn-container file-names">
         <div class="logo">
             <img class="logo-img" src="{{header.img}}" />
@@ -16,9 +62,10 @@
         <cdk-tree 
             [dataSource]="dataSource" 
             [treeControl]="treeControl"
-            class="names">
-
-            <!-- This is the tree node template for leaf nodes -->
+            class="names"
+            
+            >
+            <!-- cdkDropListConnectedTo="list-2" (cdkDropListDropped)="drop($event)" -->
             <cdk-tree-node 
                 [style.paddingLeft]="getPadding(node.level)" 
                 [style.display]="shouldRender(node) ? 'flex' : 'none'" 
@@ -26,7 +73,7 @@
                 class="example-tree-node"
                 (click)="leafClick(node)"
                 >
-                <!-- class="{{getClass(node.level)}}" -->
+                <!-- cdkDrag -->
                 <div 
                     [style.visibility]="node.expandable ? 'visible' : 'hidden'"
                     (click)="node.isExpanded = !node.isExpanded"
@@ -47,13 +94,12 @@
                 </div>
             </cdk-tree-node>
             
-            <!-- This is the tree node template for expandable nodes -->
             <cdk-tree-node 
                 [style.display]="shouldRender(node) ? 'flex' : 'none'"
                 [style.paddingLeft]="getPadding(node.level)" 
                 *cdkTreeNodeDef="let node; when: hasChild" 
                >
-               <!-- class="{{getClass(node.level)}}" -->
+             
 
                 <div 
                     [style.visibility]="node.expandable ? 'visible' : 'hidden'"
@@ -72,6 +118,12 @@
                 </div>
             </cdk-tree-node>
         </cdk-tree>
-    </div></div>
+        <p-tree [value]="items"></p-tree>
     </div>
+</div>
+
+</div>
+
+
+
  </div>

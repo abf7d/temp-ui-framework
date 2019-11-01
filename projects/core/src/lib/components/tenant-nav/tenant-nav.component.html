@@ -1,4 +1,4 @@
-<div class="tenant-container">
+<!-- <div class="tenant-container">
     <div class="tenant-btn-container"><div class="tenant-btn"></div></div>
     <div class="tenant-btn-container"><div class="tenant-btn"></div></div>
     <div class="tenant-btn-container selected"><div class="tenant-btn"></div></div>
@@ -9,6 +9,54 @@
         </div>
         <div>
             Hello!
+        </div>
+    </div>
+</div> -->
+<div class="spacer"></div>
+<div class="menu" [ngClass]="{'expand-menu': showMenu, 'contract-menu': !showMenu }">
+    <div  class="menu-left">
+        <div class="tenant-container">
+            <div class="tenant-btn-container">
+                <div (click)="expandMenu()" class="tenant-btn menu-btn">X</div>
+            </div>
+            <div class="tenant-btn-container">
+                <div class="tenant-btn"></div>
+            </div>
+            <div class="tenant-btn-container">
+                <div class="tenant-btn"></div>
+            </div>
+            <div class="tenant-btn-container selected">
+                <div class="tenant-btn"></div>
+            </div>
+            <div class="tenant-btn-container">
+                <div class="tenant-btn"></div>
+            </div>
+            <div class="expand"></div>
+            <div class="btn-container avatar-holder">
+                <div> <img class="user-circle" src="http://localhost:8080/ui/assets/user-circle.png" />
+                </div>
+                <div>
+                    Hello!
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="menu-right">
+        <div class="container-right">
+          
+            <div class="tenant-btn-container">
+                <div class="tenant-txt">Test</div>
+            </div>
+            <div class="tenant-btn-container">
+                <div class="tenant-txt">Test</div>
+            </div>
+            <div class="tenant-btn-container selected">
+                <div class="tenant-txt">Test</div>
+            </div>
+            <div class="tenant-btn-container">
+                <div class="tenant-txt">Test</div>
+            </div>
         </div>
     </div>
 </div>

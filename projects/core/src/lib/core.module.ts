@@ -15,6 +15,9 @@ import { CdkTreeModule } from '@angular/cdk/tree';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ThemeService } from './services/theme.service';
 import { LeftNavListComponent } from './components/left-nav-list/left-nav-list.component';
+import {SlideMenuModule} from 'primeng/slidemenu';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import {TreeModule} from 'primeng/tree';
 @NgModule({
   imports: [
     CommonModule,
@@ -25,7 +28,10 @@ import { LeftNavListComponent } from './components/left-nav-list/left-nav-list.c
      MatIconModule, 
      MatTreeModule,
      CdkTreeModule,
-     FontAwesomeModule
+     FontAwesomeModule,
+     SlideMenuModule,
+     DragDropModule ,
+     TreeModule
   ],
   declarations: [
     LayoutComponent,

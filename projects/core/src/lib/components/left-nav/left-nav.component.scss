@@ -198,10 +198,10 @@
 }
 .top-window {
   width: max-content;
-  width: var(--content-menu-width);
+  // width: var(--content-menu-width);
   overflow: auto;
   flex: 1;
-  
+  width: auto;
 }
 .secondary-left-nav {
  display:flex;
@@ -211,4 +211,17 @@
 }
 .menu-entry-txt {
   padding-right: 20px;
+}
+
+
+:host::ng-deep p-slidemenu {
+  flex: 1;
+  display: flex;
+}
+:host::ng-deep p-tree .ui-tree  {
+  background-color: var(--main-container-color);
+  border:none;
+  color: var(--left-nav-font-color);
+  font-size: var(--menu-font-size);
+  font-family: var(--menu-font-family);
 }

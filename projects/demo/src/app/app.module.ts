@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from 'core';
 import { TestComponent } from './test/test.component';
 import { CenterHeaderComponent } from './center-header/center-header.component';
+import { LabShareComponent } from './labshare/labshare.component';
 
 
 console.log('app module')
@@ -12,7 +13,8 @@ console.log('app module')
   declarations: [
     AppComponent,
     TestComponent,
-    CenterHeaderComponent
+    CenterHeaderComponent,
+    LabShareComponent
   ],
   imports: [
     CoreModule,

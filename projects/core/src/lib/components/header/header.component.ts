@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, AfterViewChecked, AfterViewInit } from '@angular/core';
 import { EventService } from '../../services/event.service';
 
 @Component({
@@ -6,41 +6,24 @@ import { EventService } from '../../services/event.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit  {
   config: any;
   ngOnInit() {
-      this.config = {
-                    "style": {},
-                    "logo": "http://localhost:8080/ui/assets/polus-logo.png",
-                    "leftNavList": [
-                        { "text": "one", "type":"text" },
-                        { "text": "two", "type":"img", "src":"http://localhost:8080/ui/assets/eye.png" },
-                        { "text": "three", "type":"ico", "src":"http://localhost:8080/ui/assets/zoom.png" }
-                    ],
-                    "rightNavList": [
-                        { "text": "search-click", "type":"btn", "src":"http://localhost:8080/ui/assets/zoom.png", "includeObj": false },
-                        { "text": "one", "type":"text" },
-                        { "text": "two", "type":"text" },
-                        { "text": "menu", "type":"menu", 
-                        "items": [
-                            {"text": "first item"},
-                            {"text": "second item"},
-                            {"text": "third item"},
-                            {"text": "fourth item"}
-    
-                        ]},
-                        { "text": "three", "type":"text" }
-                    ]
-                    , "centerNavList": [
-                        { "text": "one", "type":"text" },
-                        { "text": "two", "type":"img", "src":"http://localhost:8080/ui/assets/rect.png" },
-                        { "text": "menu", "type":"img", "src":"http://localhost:8080/ui/assets/poly.png"  }
-                    ]
-    }
+   
   }
-  constructor(private eventService: EventService ) {
-  
+  constructor(private eventService: EventService, private cdRef : ChangeDetectorRef ) {
+    this.config = null;
+    // fix for ngIf - Expression has changed after it was checked
+    // https://stackoverflow.com/questions/38930183/angular2-expression-has-changed-after-it-was-checked-binding-to-div-width-wi
+    setTimeout(_ => { 
+      this.eventService.get('header').subscribe(val => {
+        if (val !== null) {
+          this.config = val;
+        }
+      });
+    });
   }
+
 
   click(name, id, configObj) {
     console.log('click' + ' ' + id);

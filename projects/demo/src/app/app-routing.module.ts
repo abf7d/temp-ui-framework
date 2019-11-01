@@ -2,10 +2,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent, LeftNavComponent, LeftNavListComponent, HeaderComponent, RightNavComponent, TenantNavComponent } from 'core';
 import { TestComponent } from './test/test.component';
 import { CenterHeaderComponent } from './center-header/center-header.component';
+import { LabShareComponent } from './labshare/labshare.component';
 
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'polus',
+    pathMatch: 'full'
+  },
+  {
+    path: 'polus',
     component: LayoutComponent,
     children: [
       {
@@ -30,6 +36,11 @@ const routes: Routes = [
       },
       {
         path: '',
+        component: TenantNavComponent,
+        outlet: 'tenant'
+      },
+      {
+        path: '',
         component: CenterHeaderComponent,
         outlet: 'center-header'
       }]
@@ -38,7 +49,7 @@ const routes: Routes = [
 
 
   {
-    path: 'list',
+    path: 'labshare',
     component: LayoutComponent,
     children: [
       {
@@ -48,7 +59,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        component: TestComponent,
+        component: LabShareComponent,
         outlet: 'center'
       },
       {

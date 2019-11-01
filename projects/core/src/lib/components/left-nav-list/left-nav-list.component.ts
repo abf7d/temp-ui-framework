@@ -11,7 +11,8 @@ export class LeftNavListComponent {
   public config: any;
   public header = { img: "http://localhost:8080/ui/assets/eye.png", text: "Selected Heirarchy" }
   constructor(private eventService: EventService) {
-    eventService.get('left-nav').subscribe(val => this.config = val);
+    this.config = null;
+   setTimeout( _ => eventService.get('left-nav').subscribe(val => val !== null ? this.config = val : null));
   }
 
   leafClick(node) {

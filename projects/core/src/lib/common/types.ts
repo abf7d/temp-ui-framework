@@ -3,5 +3,6 @@ export interface Dictionary<T> {
 }
 export interface Theme {
     name: string;
+    class: string;
     properties: any;
   }

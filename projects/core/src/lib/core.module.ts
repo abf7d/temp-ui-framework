@@ -18,6 +18,8 @@ import { LeftNavListComponent } from './components/left-nav-list/left-nav-list.c
 import {SlideMenuModule} from 'primeng/slidemenu';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import {TreeModule} from 'primeng/tree';
+import { ConfigResolverService } from './services/config-resolver.service';
+import {ConfigAPIService} from './services/config-api.service';
 @NgModule({
   imports: [
     CommonModule,
@@ -43,7 +45,9 @@ import {TreeModule} from 'primeng/tree';
   ],
   providers: [
     EventService,
-    ThemeService
+    ThemeService,
+    ConfigResolverService,
+    ConfigAPIService
   ],
   exports: [
     LeftNavComponent

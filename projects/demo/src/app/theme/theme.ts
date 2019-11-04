@@ -2,7 +2,9 @@ import { Theme } from 'core/lib/common/types';
 
   export const labshare: Theme = {
     name: "labshare",
+    class: "theme",
     properties: {
+        "--heading-bg-color": "#210a58",
         "--secondary-bar": "#292929",
         "--secondary-container-color": "white",
         "--color-border": "black",
@@ -30,7 +32,7 @@ import { Theme } from 'core/lib/common/types';
         "--menu-li-padding": "0px 12px",
         "--menu-section-border-botom": "2px solid #542bb3",
         "--color-dark-content": "#2b2b2b",
-        "--heading-bg-color": "#210a58",
+        
         "--heading-text-color": "white",
         "--heading-font-size": "21px",
         "--heading-line-height": "2",
@@ -40,7 +42,9 @@ import { Theme } from 'core/lib/common/types';
   
   export const polus: Theme = {
     name: "polus",
+    class: "theme",
     properties: {
+        "--heading-bg-color": "#2c2c2c",
         "--secondary-bar": "#292929",
         "--secondary-container-color": "#323232",
         "--main-container-color": "#3E3E3E",
@@ -70,7 +74,7 @@ import { Theme } from 'core/lib/common/types';
         "--menu-li-padding": "0px 12px",
         "--menu-section-border-botom": "none",
         "--color-dark-content": "#2B2B2B",
-        "--heading-bg-color": "#2c2c2c",
+        
         "--heading-text-color": "white",
         "--heading-font-size": "18px",
         "--heading-line-height": "2",

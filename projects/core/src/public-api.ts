@@ -11,3 +11,5 @@ export * from './lib/components/tenant-nav/tenant-nav.component';
 export * from './lib/components/left-nav-list/left-nav-list.component';
 export * from './lib/services/event.service';
 export * from './lib/services/theme.service';
+export * from './lib/services/config-resolver.service';
+export * from './lib/common/types';

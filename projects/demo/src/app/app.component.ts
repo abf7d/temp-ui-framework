@@ -61,15 +61,35 @@ import { EventService } from 'core';
 //         { "text": "menu", "type":"img", "src":"http://localhost:8080/ui/assets/poly.png"  }
 //     ]
 // };
+
+
 @Component({
   selector: 'app-root',
   template: `<router-outlet></router-outlet>`,
   styles: []
 })
 export class AppComponent {
+
+
+
+  tenantConfig = {
+    "applist": [
+      { "id": "one", "route":"/labshare", text: "First App", selected: false },
+         { "id": "one", "route":"/labshare/(right:test2)", text: "First App", selected: false },
+         { "id": "one", "route":"/labshare/(right:test)", text: "Second App", selected: false },
+         { "id": "one", "route":"polus", text: "Fourth App", selected: true },
+         { "id": "one", "route":"polus", text: "Fifth App", selected: false },
+     ],
+   "adminlist": [
+     { "id": "one", "route":"polus", text: "Fifth App", selected: false },
+   ] 
+};
+
+
   constructor(eventService: EventService) {
    // eventService.get('left-nav').next(demoLeftNavItems);
     // eventService.get('header').next(demoHeaderItems);
+    eventService.get('tenant').next(this.tenantConfig);
   }
 
   title = 'demo';

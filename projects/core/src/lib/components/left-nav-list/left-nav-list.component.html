@@ -1,7 +1,7 @@
-<div class="secondary-left-nav" *ngIf="config !== null">
+<div class="secondary-left-nav" >
     <div class="btn-container file-names">
 
-        
+        <div  *ngIf="config !== null"> 
         <div class="logo">
             <img class="logo-img" src="{{header.img}}" />
             <div class="menu-entry-txt"> {{header.text}} </div>
@@ -15,6 +15,7 @@
                 <div class="menu-entry-txt">{{entry.text}}</div>
             </li>
         </ul>
+    </div>
     </div>
 </div>
 

@@ -50,12 +50,15 @@ export class LeftNavComponent implements OnInit {
   items; //: MenuItem[];
 
     ngOnInit() {
-      this.eventService.get('left-nav').subscribe(val => {
-            if (val !== null) {
-              this.treeData = this.convertConfigToDatasource(val);
-              this.dataSource = new ArrayDataSource(this.treeData);
-            }
-          });
+      setTimeout( _ => {
+        this.eventService.get('left-nav').subscribe(val => {
+          if (val !== null) {
+            this.treeData = this.convertConfigToDatasource(val);
+            this.dataSource = new ArrayDataSource(this.treeData);
+          }
+        });
+      });
+     
         this.items =
 
         

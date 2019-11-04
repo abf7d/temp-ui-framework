@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService, ThemeService } from 'core';
 import { polus, labshare } from '../theme/theme';
+import { ActivatedRoute } from '@angular/router';
+import { Theme } from 'core/core';
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
@@ -86,7 +88,8 @@ demoLeftNavItems =
 };
 
 
-  constructor(private eventService: EventService, private themeService: ThemeService) {
+  constructor(private eventService: EventService, private themeService: ThemeService,
+    private route: ActivatedRoute) {
     this.hideContent = false;
     const searchEvent = this.eventService.get('search-click');
     searchEvent.subscribe(val => {
@@ -104,10 +107,12 @@ demoLeftNavItems =
 
   }
   ngOnInit(){
-    this.themeService.setActiveTheme(polus);
+    const theme = this.route.snapshot.data.items.find( i => i.class == "theme")  as Theme;
+    this.themeService.setActiveTheme(theme); //polus);
+   
     this.eventService.get('header').next(this.demoHeaderItems);
     this.eventService.get('left-nav').next(this.demoLeftNavItems);
-    this.eventService.get('tenant').next(this.tenantConfig);
+    // this.eventService.get('tenant').next(this.tenantConfig);
   }
 
   changeTheme() {

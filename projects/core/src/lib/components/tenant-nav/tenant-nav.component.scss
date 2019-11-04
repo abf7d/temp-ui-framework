@@ -65,7 +65,6 @@
     bottom: 0;
     //left: 103px;
     z-index: 3;
-    display: block;
     box-sizing: border-box;
     overflow-y: auto;
     // background: #f5f5f5;
@@ -77,6 +76,10 @@
      width: 88px;
      display:flex;
      border-right: 1px solid black;
+}
+
+.null-container {
+  display:flex;
 }
 
 /*.collapsed {

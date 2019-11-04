@@ -3,6 +3,7 @@ import { LayoutComponent, LeftNavComponent, LeftNavListComponent, HeaderComponen
 import { TestComponent } from './test/test.component';
 import { CenterHeaderComponent } from './center-header/center-header.component';
 import { LabShareComponent } from './labshare/labshare.component';
+import { ConfigResolverService } from 'core';
 
 const routes: Routes = [
   {
@@ -13,6 +14,7 @@ const routes: Routes = [
   {
     path: 'polus',
     component: LayoutComponent,
+    resolve: { items: ConfigResolverService },
     children: [
       {
         path: '',
@@ -51,6 +53,7 @@ const routes: Routes = [
   {
     path: 'labshare',
     component: LayoutComponent,
+    resolve: { items: ConfigResolverService },
     children: [
       {
         path: '',

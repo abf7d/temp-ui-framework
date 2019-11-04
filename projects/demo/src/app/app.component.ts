@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { EventService } from 'core';
+import { ActivatedRoute } from '@angular/router';
 // const demoLeftNavItems = 
 //   {
 //     group: [
@@ -86,10 +87,16 @@ export class AppComponent {
 };
 
 
-  constructor(eventService: EventService) {
+  constructor(eventService: EventService, private route: ActivatedRoute) {
    // eventService.get('left-nav').next(demoLeftNavItems);
     // eventService.get('header').next(demoHeaderItems);
-    eventService.get('tenant').next(this.tenantConfig);
+    // eventService.get('tenant').next(this.tenantConfig);
+
+
+    
+
+  //  this.eventService.get('tenant').next(this.tenantConfig);
+
   }
 
   title = 'demo';

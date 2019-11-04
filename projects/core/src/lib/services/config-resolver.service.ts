@@ -15,7 +15,11 @@ export class ConfigResolverService implements Resolve<any> {
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         let routePath = route.routeConfig.path;
         console.log('routePath: ' + routePath);
-         return  forkJoin([ this.apiService.getDynamicConfig(routePath).pipe(take(1))]); /*forkJoin([
+         return  forkJoin([ 
+             this.apiService.getThemeConfig(routePath).pipe(take(1)),
+             this.apiService.getLayoutConfig(routePath).pipe(take(1)),
+             this.apiService.getGlobalLayoutConfig().pipe(take(1))
+            ]); /*forkJoin([
             this.apiService.getStaticConfig().pipe(take(1)),
             this.apiService.getDynamicConfig(routePath).pipe(take(1))],
           ); */

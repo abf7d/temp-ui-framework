@@ -1,0 +1,57 @@
+{
+    "class": "global-layout",
+    "tenant": {
+        "applist": [
+            {
+                "id": "one",
+                "route": "/labshare",
+                "text": "First App",
+                "selected": false
+            },
+            {
+                "id": "one",
+                "route": "/labshare/(right:test2)",
+                "text": "First App",
+                "selected": false
+            },
+            {
+                "id": "one",
+                "route": "/labshare/(right:test)",
+                "text": "Second App",
+                "selected": false
+            },
+            {
+                "id": "one",
+                "route": "polus",
+                "text": "Fourth App",
+                "selected": true
+            },
+            {
+                "id": "one",
+                "route": "polus",
+                "text": "Fifth App",
+                "selected": false
+            }
+        ],
+        "adminlist": [
+            {
+                "id": "one",
+                "route": "polus",
+                "text": "Fifth App",
+                "selected": false
+            },
+            {
+                "id": "one",
+                "route": "polus",
+                "text": "Fifth App",
+                "selected": false
+            },
+            {
+                "id": "one",
+                "route": "polus",
+                "text": "Fifth App",
+                "selected": false
+            }
+        ]
+    }
+}

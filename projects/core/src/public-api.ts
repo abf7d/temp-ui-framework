@@ -13,3 +13,4 @@ export * from './lib/services/event.service';
 export * from './lib/services/theme.service';
 export * from './lib/services/config-resolver.service';
 export * from './lib/common/types';
+export * from './lib/services/config-api.service'

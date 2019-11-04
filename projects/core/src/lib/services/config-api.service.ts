@@ -14,8 +14,15 @@ export class ConfigAPIService {
         this._env = "default";
     }
   
-    getDynamicConfig(id): Observable<any> {
+    getThemeConfig(id): Observable<any> {
         return this._http.get('./assets/themes/' + id + '.json');
+    }
 
+    getLayoutConfig(id): Observable<any> {
+        return this._http.get('./assets/layout/' + id + '.json');
+    }
+
+    getGlobalLayoutConfig():  Observable<any> {
+        return this._http.get('./assets/layout/global.json');
     }
 }

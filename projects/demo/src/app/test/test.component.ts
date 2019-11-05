@@ -34,7 +34,7 @@ export class TestComponent  implements OnInit  {
   ngOnInit(){
     // set items as JsonConfig[] and pass into a LoadConfig service that validates and loads
     const theme = this.route.snapshot.data.items.find( i => i.class == "theme")  as Theme;
-    const layout = this.route.snapshot.data.items.find( i => i.class == "layout")
+    const layout = this.route.snapshot.data.items.find( i => i.class == "layout");
     
     this.themeService.setActiveTheme(theme); //polus);
     this.eventService.get('header').next(layout.header);

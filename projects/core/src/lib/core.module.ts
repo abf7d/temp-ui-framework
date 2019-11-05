@@ -20,6 +20,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import {TreeModule} from 'primeng/tree';
 import { ConfigResolverService } from './services/config-resolver.service';
 import {ConfigAPIService} from './services/config-api.service';
+import { RouteService } from './services/route.service';
 @NgModule({
   imports: [
     CommonModule,
@@ -47,7 +48,8 @@ import {ConfigAPIService} from './services/config-api.service';
     EventService,
     ThemeService,
     ConfigResolverService,
-    ConfigAPIService
+    ConfigAPIService,
+    RouteService
   ],
   exports: [
     LeftNavComponent

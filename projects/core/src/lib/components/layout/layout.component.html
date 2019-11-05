@@ -1,33 +1,33 @@
 <div class="page">
-<div class="left tenant outlet">
-    <router-outlet name="tenant"></router-outlet>
-</div>
-<div class="wrapper">
-
-    <div class="outlet header-container">
-        <router-outlet name="header"></router-outlet>
+    <div class="left tenant outlet">
+        <router-outlet name="tenant"></router-outlet>
     </div>
+    <div class="wrapper">
 
-    <div class="main-section">
-        <!-- <div class="left tenant outlet">
+        <div class="outlet header-container">
+            <router-outlet name="header"></router-outlet>
+        </div>
+
+        <div class="main-section">
+            <!-- <div class="left tenant outlet">
             <router-outlet name="tenant"></router-outlet>
         </div> -->
-        <div class="left outlet">
-            <router-outlet name="left"></router-outlet>
-        </div>
-        <div class="main-content">
-            <div class="outlet">
-                <router-outlet name="center-header"></router-outlet>
+            <div class="left outlet">
+                <router-outlet name="left"></router-outlet>
             </div>
-            <div class="center-router-content outlet">
-                <router-outlet name="center"></router-outlet>
+            <div class="main-content">
+                <div class="outlet">
+                    <router-outlet name="center-header"></router-outlet>
+                </div>
+                <div class="center-router-content outlet">
+                    <router-outlet name="center"></router-outlet>
+                </div>
             </div>
-        </div>
-        <div class="right-container outlet">
-            <router-outlet name="right"></router-outlet>
+            <div class="right-container outlet">
+                <router-outlet name="right"></router-outlet>
+            </div>
         </div>
     </div>
-</div>
 </div>
 
 

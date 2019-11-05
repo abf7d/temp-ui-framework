@@ -5,31 +5,25 @@
             {
                 "id": "one",
                 "route": "/labshare",
-                "text": "First App",
-                "selected": false
-            },
-            {
-                "id": "one",
-                "route": "/labshare/(right:test2)",
-                "text": "First App",
+                "text": "Labshare 1",
                 "selected": false
             },
             {
                 "id": "one",
                 "route": "/labshare/(right:test)",
-                "text": "Second App",
+                "text": "Labshare 2",
                 "selected": false
             },
             {
                 "id": "one",
                 "route": "polus",
-                "text": "Fourth App",
+                "text": "Polus Layout / Theme",
                 "selected": true
             },
             {
                 "id": "one",
-                "route": "polus",
-                "text": "Fifth App",
+                "route": "/noleft",
+                "text": "No Left Nav",
                 "selected": false
             }
         ],

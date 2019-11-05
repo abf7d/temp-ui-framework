@@ -77,13 +77,14 @@
 
 .null-container {
   display: flex;
+  flex: 1;
 }
 
 /*.collapsed {
   width: 70px;
 }*/
 .expand-menu {
-  width: 485px;
+  width: 333px;
   transition: 0.2s;
   box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 16px 24px 2px rgba(0, 0, 0, 0.14),
     0 6px 30px 5px rgba(0, 0, 0, 0.12);
@@ -139,7 +140,7 @@
   flex: 1;
 }
 
-.container-right .tenant-btn-container:first-child {
+.container-right > .tenant-btn-container:first-child {
   padding-top: 71px;
 }
 .container-right .admin-list {

@@ -5,6 +5,10 @@ import { CenterHeaderComponent } from './center-header/center-header.component';
 import { LabShareComponent } from './labshare/labshare.component';
 import { ConfigResolverService } from 'core';
 
+// dynamic routes with generic auth gaurd
+// clean comments and code
+// load auth from backend in route resolver so you can filter configs
+
 const routes: Routes = [
   {
     path: '',
@@ -18,7 +22,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: LeftNavComponent, // LeftNavListComponent,
+        component: LeftNavComponent, 
         outlet: 'left'
       },
       {
@@ -57,7 +61,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: LeftNavListComponent, // LeftNavListComponent,
+        component: LeftNavListComponent, 
         outlet: 'left'
       },
       {
@@ -75,18 +79,38 @@ const routes: Routes = [
         component: TenantNavComponent,
         outlet: 'tenant'
       },
-
-
-
       {
         path: 'test',
         component: RightNavComponent,
         outlet: 'right'
-      }
-      , {
+      }, 
+      {
         path: 'test2',
         component: LeftNavComponent,
         outlet: 'right'
+      }
+    ]
+  },
+
+  {
+    path: 'noleft',
+    component: LayoutComponent,
+    resolve: { items: ConfigResolverService },
+    children: [
+      {
+        path: '',
+        component: LabShareComponent,
+        outlet: 'center'
+      },
+      {
+        path: '',
+        component: HeaderComponent,
+        outlet: 'header'
+      },
+      {
+        path: '',
+        component: TenantNavComponent,
+        outlet: 'tenant'
       }
     ]
   }

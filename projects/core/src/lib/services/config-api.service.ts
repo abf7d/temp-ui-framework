@@ -25,4 +25,8 @@ export class ConfigAPIService {
     getGlobalLayoutConfig():  Observable<any> {
         return this._http.get('./assets/layout/global.json');
     }
+
+    getRouteConfig():  Observable<any> {
+        return this._http.get('./assets/route/global.json');
+    }
 }

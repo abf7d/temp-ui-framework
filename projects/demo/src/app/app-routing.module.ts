@@ -90,7 +90,7 @@ const routes: Routes = [
         outlet: 'right'
       }
     ]
-  },
+  } ,
 
   {
     path: 'noleft',
@@ -113,7 +113,7 @@ const routes: Routes = [
         outlet: 'tenant'
       }
     ]
-  }
+  } 
 ];
 
 export const UsersRouting = RouterModule.forRoot(routes);

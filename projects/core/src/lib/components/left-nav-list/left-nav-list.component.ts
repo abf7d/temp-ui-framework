@@ -9,14 +9,14 @@ import { EventService } from '../../services/event.service';
 export class LeftNavListComponent {
 
   public config: any;
-  public header = { img: "http://localhost:8080/ui/assets/eye.png", text: "Selected Heirarchy" }
+  public header = { img: "assets/eye.png", text: "Selected Heirarchy" }
   constructor(private eventService: EventService) {
     this.config = null;
-   setTimeout( _ => eventService.get('left-nav').subscribe(val => val !== null ? this.config = val : null));
+    setTimeout(_ => eventService.get('left-nav').subscribe(val => val !== null ? this.config = val : null));
   }
 
   leafClick(node) {
-    this.config.group.forEach( g => g.selected = false);
+    this.config.group.forEach(g => g.selected = false);
     node.selected = true;
     console.log(node);
     const eventStream = this.eventService.get(node.event.name);

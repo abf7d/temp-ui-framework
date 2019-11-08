@@ -6,8 +6,6 @@
             <img class="logo-img" src="{{header.img}}" />
             <div class="menu-entry-txt"> {{header.text}} </div>
         </div>
-        
-        
 
         <ul class="names">
             <li *ngFor="let entry of config.group" [class.active]="entry.selected"  (click)="leafClick(entry)">

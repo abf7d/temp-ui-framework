@@ -1,89 +1,58 @@
 import { Injectable, Injector } from '@angular/core';
-import { ConfigAPIService } from './config-api.service';
 import { ConfigResolverService } from './config-resolver.service';
 
 import { Router } from '@angular/router';
 
 @Injectable()
 export class RouteService {
-    // private _configData: any;
-    // private _promise: Promise<any>;
-    // private _promiseDone: boolean = false;
 
-    constructor(/*private configAPI: ConfigAPIService, private router: Router*/) { }
+    constructor() { }
 
-    /* loadConfig(): Promise<any> {
-        var url: string = "/api/config";
-        this._configData = null;
- 
-        if (this._promiseDone) {
-            console.log("In Config Service. Promise is already complete.");
-            return Promise.resolve();
-        }
- 
-        if (this._promise != null) {
-            console.log("In Config Service. Promise exists.  Returning it.");
-            return this._promise;
-        }
- 
-        console.log("In Config Service. Loading config data.");
-        this._promise = this.http
-            .get(url, { headers: new HttpHeaders() }).pipe(
-            map((res: Response) => { return res; }))
-            .toPromise()
-            .then((data: any) => { this._configData = data; this._promiseDone = true; })
-            .catch((err: any) => { this._promiseDone = true; return Promise.resolve(); });
-        return this._promise;
-    }
- 
-    get configData(): any {
-        return this._configData;
-    } */
-
-
-    setRoutes(dictionary: any, reset: boolean, configAPI, injector: Injector) {
+    setRoutes(reset: boolean, router: Router, routeConfig, components: any) {
         const routes = [];
-        var router: Router = injector.get(Router);
-        return configAPI.getRouteConfig().toPromise(res => {
-                if (res && res.routes) {
-                const configRoutes = res.routes;
+
+        if (routeConfig && routeConfig.routes) {
+            const configRoutes = routeConfig.routes;
+
+            configRoutes.forEach(element => {
+                let route = this.buildRoute(element, components);
                 
-                    let parentRoute = router.config.find(p => p.path === "");
-                    let apiResolver = ConfigResolverService;
-                    parentRoute.resolve.items = apiResolver;
+                routes.push(route);
+            });
 
-                    configRoutes.forEach(element => {
-                        let route = this.buildRoute(element, dictionary);
-                        parentRoute.children = route.children;
-                        routes.push(parentRoute);
-                    });
-
-                    if (reset) {
-                        router.resetConfig(routes);
-                    }
-                    else {
-                        router.config = [...new Set([...router.config, ...routes])];
-                    }
-                    router.navigateByUrl(res.defaulRoute)
-                }
-        });
-
-
+            if (reset) {
+                router.resetConfig(routes);
+            }
+            else {
+                router.config = [...new Set([...router.config, ...routes])];
+            }
+            if (routeConfig.defaulRoute !== undefined) {
+                router.navigateByUrl(routeConfig.defaulRoute)
+            }
+        }
     }
 
-    buildRoute(element, dictionary) {
-        element.component = dictionary[element.component];
+    buildRoute(element, components) {
+        if (components[element.component] !== undefined) {
+            element.component = components[element.component]; 
+        }
+        if (element.resolve !== undefined) {
+                    
+            for (let attr in element.resolve) {
+                element.resolve[attr] = components[element.resolve[attr]];
+            } 
+        }
         if (element.children === undefined) {
-            let route = { path: element.path, component: element.component, outlet: element.outlet, children: [] /*, children: children */ };
+            let route = { resolve: element.resolve, path: element.path, component: element.component, outlet: element.outlet, children: []};
             return route;
         }
         if (element.children !== undefined) {
             const children = [];
             for (const child of element.children) {
-                const route = this.buildRoute(child, dictionary);
+                const route = this.buildRoute(child, components);
                 children.push(route);
             }
-            let route = { path: element.path, component: element.component, outlet: element.outlet, children: children };
+            let route = { resolve: element.resolve, path: element.path, component: element.component, outlet: element.outlet, children: children };
             return route;
         }
     }

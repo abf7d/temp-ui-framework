@@ -19,12 +19,17 @@
     ]
 },
     "leftnav": {
+        "header": { 
+            "img": "assets/eye.png", 
+            "text": "Selected Heirarchy" 
+        },
+        "treeElementPaddingOffset": 26,
         "class": "left-nav-layout",
         "group": [
             {
                 "id": "publication",
                 "text": "Publication",
-                "image": "http://localhost:8080/ui/assets/eye.png",
+                "img": "assets/eye.png",
                 "selected": false,
                 "event": {
                     "type": "click",
@@ -35,7 +40,7 @@
                     {
                         "id": "publication",
                         "text": "Test 1",
-                        "image": "http://localhost:8080/ui/assets/eye.png",
+                        "img": "assets/eye.png",
                         "selected": false,
                         "event": {
                             "type": "click",
@@ -46,7 +51,7 @@
                     {
                         "id": "publication",
                         "text": "Test 2",
-                        "image": "http://localhost:8080/ui/assets/eye.png",
+                        "img": "assets/eye.png",
                         "selected": false,
                         "event": {
                             "type": "click",
@@ -57,7 +62,7 @@
                     {
                         "id": "publication",
                         "text": "Test 3",
-                        "image": "http://localhost:8080/ui/assets/eye.png",
+                        "img": "assets/eye.png",
                         "selected": false,
                         "event": {
                             "type": "click",
@@ -70,7 +75,7 @@
             {
                 "id": "publication",
                 "text": "Instruments & Resource",
-                "image": "http://localhost:8080/ui/assets/eye.png",
+                "img": "assets/eye.png",
                 "selected": false,
                 "event": {
                     "type": "click",
@@ -81,7 +86,7 @@
                     {
                         "id": "publication",
                         "text": "Test 1",
-                        "image": "http://localhost:8080/ui/assets/eye.png",
+                        "img": "assets/eye.png",
                         "selected": false,
                         "event": {
                             "type": "click",
@@ -92,7 +97,7 @@
                             {
                                 "id": "publication",
                                 "text": "Test 1 this is a long name Tetset tes ste ss",
-                                "image": "http://localhost:8080/ui/assets/eye.png",
+                                "img": "assets/eye.png",
                                 "selected": false,
                                 "event": {
                                     "type": "click",
@@ -103,7 +108,7 @@
                             {
                                 "id": "publication",
                                 "text": "Test 2 this is a long name ",
-                                "image": "http://localhost:8080/ui/assets/eye.png",
+                                "img": "assets/eye.png",
                                 "selected": false,
                                 "event": {
                                     "type": "click",
@@ -114,7 +119,7 @@
                             {
                                 "id": "publication",
                                 "text": "Test 3 this is a long name",
-                                "image": "http://localhost:8080/ui/assets/eye.png",
+                                "img": "assets/eye.png",
                                 "selected": false,
                                 "event": {
                                     "type": "click",
@@ -127,7 +132,7 @@
                     {
                         "id": "publication",
                         "text": "Test 2",
-                        "image": "http://localhost:8080/ui/assets/eye.png",
+                        "img": "assets/eye.png",
                         "selected": false,
                         "event": {
                             "type": "click",
@@ -138,7 +143,7 @@
                     {
                         "id": "publication",
                         "text": "Test 3",
-                        "image": "http://localhost:8080/ui/assets/eye.png",
+                        "img": "assets/eye.png",
                         "selected": false,
                         "event": {
                             "type": "click",
@@ -151,7 +156,7 @@
             {
                 "id": "publication",
                 "text": "Project Tracking",
-                "image": "http://localhost:8080/ui/assets/eye.png",
+                "img": "assets/eye.png",
                 "selected": false,
                 "event": {
                     "type": "click",
@@ -162,7 +167,7 @@
             {
                 "id": "publication",
                 "text": "Groups",
-                "image": "http://localhost:8080/ui/assets/eye.png",
+                "img": "assets/eye.png",
                 "selected": false,
                 "event": {
                     "type": "click",
@@ -173,7 +178,7 @@
             {
                 "id": "publication",
                 "text": "Pages",
-                "image": "http://localhost:8080/ui/assets/eye.png",
+                "img": "assets/eye.png",
                 "selected": true,
                 "event": {
                     "type": "click",
@@ -184,7 +189,7 @@
             {
                 "id": "publication",
                 "text": "Storage Space",
-                "image": "http://localhost:8080/ui/assets/eye.png",
+                "img": "assets/eye.png",
                 "selected": false,
                 "event": {
                     "type": "click",

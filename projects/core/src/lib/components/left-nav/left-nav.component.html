@@ -1,60 +1,9 @@
 
 
-<!-- https://stackoverflow.com/questions/36273791/how-to-implement-a-draggable-div-in-angular-2-using-rx -->
-<div class="secondary-left-nav" ngResizable [rzHandles]="'e'" position="'0,0'">
-        
-        <ng-content select="[left-dec]">
-            </ng-content>
-
-
-
-
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-
-
-            <!-- <div  cdkDropList id="list-1" cdkDropListConnectedTo="list-2" (cdkDropListDropped)="drop($event)">
-                <div *ngFor="let item of treeData" cdkDrag>{{item.name}}</div>
-            </div> -->
-            
-          
-            <!-- <div
-            cdkDropList
-            #todoList="cdkDropList"
-            [cdkDropListData]="treeData"
-            [cdkDropListConnectedTo]="[doneList]"
-            class="example-list"
-            (cdkDropListDropped)="drop($event)">
-            <div class="example-box" *ngFor="let item of treeData" cdkDrag>{{item.name}}</div>
-          </div>
-
-          <div
-    cdkDropList
-    #doneList="cdkDropList"
-    [cdkDropListData]="treeData"
-    [cdkDropListConnectedTo]="[todoList]"
-    class="example-list"
-    (cdkDropListDropped)="drop($event)">
-    <div class="example-box" *ngFor="let item of treeData" cdkDrag>{{item.name}}</div>
-  </div>
- -->
+<div class="secondary-left-nav" ngResizable [rzHandles]="'e'" position="'0,0'" *ngIf="navExpanded">
 
     <div class="btn-container file-names">
-        <div class="logo">
+        <div class="logo" *ngIf="header">
             <img class="logo-img" src="{{header.img}}" />
             <div class="menu-entry-txt"> {{header.text}} </div>
         </div>
@@ -63,23 +12,17 @@
         <cdk-tree 
             [dataSource]="dataSource" 
             [treeControl]="treeControl"
-            class="names"
-            
-            >
-            <!-- cdkDropListConnectedTo="list-2" (cdkDropListDropped)="drop($event)" -->
+            class="names">
             <cdk-tree-node 
                 [style.paddingLeft]="getPadding(node.level)" 
                 [style.display]="shouldRender(node) ? 'flex' : 'none'" 
                 *cdkTreeNodeDef="let node"
                 class="example-tree-node"
-                (click)="leafClick(node)"
-                >
-                <!-- cdkDrag -->
+                (click)="leafClick(node)">
                 <div 
                     [style.visibility]="node.expandable ? 'visible' : 'hidden'"
                     (click)="node.isExpanded = !node.isExpanded"
-                    class="selection-open" 
-                    src="http://localhost:8080/ui/assets/eye.png" >
+                    class="selection-open">
                     
                     <fa-icon 
                         [icon]="treeControl.isExpanded(node) ? faAngleDown : faAngleRight"
@@ -88,7 +31,7 @@
                 </div>
 
                 <div> 
-                    <img src="http://localhost:8080/ui/assets/eye.png" /> 
+                    <img src="{{node.img}}" /> 
                 </div>
                 <div class="menu-entry-txt" >
                     {{node.name}}
@@ -105,7 +48,7 @@
                 <div 
                     [style.visibility]="node.expandable ? 'visible' : 'hidden'"
                     (click)="node.isExpanded = !node.isExpanded"
-                    src="http://localhost:8080/ui/assets/eye.png"
+                    
                     class="selection-open" >
 
                     <fa-icon 
@@ -113,13 +56,20 @@
                         [icon]="treeControl.isExpanded(node) ? faAngleDown : faAngleRight ">
                     </fa-icon>
                 </div>
-                <div> <img src="http://localhost:8080/ui/assets/eye.png" /> </div>
+                <div> <img src="{{node.img}}" /> </div>
                 <div class="menu-entry-txt" >
                     {{node.name}}
                 </div>
             </cdk-tree-node>
         </cdk-tree>
-        <p-tree [value]="items"></p-tree>
+        <!-- <p-tree [value]="items">
+            <ng-template let-node pTemplate="default">
+                <span>Test</span>
+            </ng-template>
+            <ng-template let-node pTemplate="test">
+                <h3>Test 2</h3>
+            </ng-template>
+        </p-tree> -->
     </div>
 </div>
 
@@ -127,4 +77,11 @@
 
 
 
+ </div>
+ <div class="right-toggle" (click)="toggleLeftNav()">
+    <fa-icon 
+    class="drawer" 
+    [icon]="navExpanded ? faAngleLeft : faAngleRight ">
+</fa-icon>
+     <div></div>
  </div>

@@ -26,7 +26,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "angular2-draggable": "^2.3.2",
-    "core": "file:dist/core",
+    "core": "file:dist",
     "primeicons": "^2.0.0",
     "primeng": "^8.1.1",
     "rxjs": "~6.4.0",

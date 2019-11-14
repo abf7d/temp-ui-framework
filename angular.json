@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "core": {
+    "temp-ls-ui-framework": {
       "projectType": "library",
       "root": "projects/core",
       "sourceRoot": "projects/core/src",
@@ -145,5 +145,5 @@
         }
       }
     }},
-  "defaultProject": "core"
+  "defaultProject": "temp-ls-ui-framework"
 }

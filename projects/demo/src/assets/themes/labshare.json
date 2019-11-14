@@ -2,6 +2,7 @@
     "name": "labshare",
     "class": "theme",
     "properties": {
+        "--test": "blue",
         "--heading-bg-color": "#210a58",
         "--secondary-bar": "#292929",
         "--secondary-container-color": "white",

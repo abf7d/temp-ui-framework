@@ -14,6 +14,13 @@ import { EventService } from './services/event.service';
 import { CdkTreeModule } from '@angular/cdk/tree';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ThemeService } from './services/theme.service';
+import { LeftNavListComponent } from './components/left-nav-list/left-nav-list.component';
+import {SlideMenuModule} from 'primeng/slidemenu';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import {TreeModule} from 'primeng/tree';
+import { ConfigResolverService } from './services/config-resolver.service';
+import {ConfigAPIService} from './services/config-api.service';
+import { RouteService } from './services/route.service';
 @NgModule({
   imports: [
     CommonModule,
@@ -24,7 +31,10 @@ import { ThemeService } from './services/theme.service';
      MatIconModule, 
      MatTreeModule,
      CdkTreeModule,
-     FontAwesomeModule
+     FontAwesomeModule,
+     SlideMenuModule,
+     DragDropModule ,
+     TreeModule
   ],
   declarations: [
     LayoutComponent,
@@ -32,10 +42,17 @@ import { ThemeService } from './services/theme.service';
     RightNavComponent,
     HeaderComponent,
     TenantNavComponent,
+    LeftNavListComponent,
   ],
   providers: [
     EventService,
-    ThemeService
+    ThemeService,
+    ConfigResolverService,
+    ConfigAPIService,
+    RouteService
+  ],
+  exports: [
+    LeftNavComponent
   ],
   entryComponents: [
   ]

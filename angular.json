@@ -84,7 +84,13 @@
               "projects/demo/src/assets"
             ],
             "styles": [
-              "projects/demo/src/styles.scss"
+              "projects/demo/src/styles.scss",
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeng/resources/themes/rhea/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "projects/demo/src/prime-styles.scss",
+              "node_modules/angular2-draggable/css/resizable.min.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
             ],
             "scripts": []
           },

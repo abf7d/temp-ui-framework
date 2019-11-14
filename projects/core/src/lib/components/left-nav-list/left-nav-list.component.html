@@ -1,0 +1,21 @@
+<div class="secondary-left-nav" >
+    <div class="btn-container file-names">
+
+        <div  *ngIf="config !== null"> 
+        <div class="logo">
+            <img class="logo-img" src="{{header.img}}" />
+            <div class="menu-entry-txt"> {{header.text}} </div>
+        </div>
+
+        <ul class="names">
+            <li *ngFor="let entry of config.group" [class.active]="entry.selected"  (click)="leafClick(entry)">
+                <div> <img src="{{entry.image}}" /> </div>
+                <div class="menu-entry-txt">{{entry.text}}</div>
+            </li>
+        </ul>
+    </div>
+    </div>
+</div>
+
+
+

@@ -1,15 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { EventService, ThemeService } from 'core';
 import { polus, labshare } from '../theme/theme';
+import { ActivatedRoute } from '@angular/router';
+import { Theme } from 'core/core';
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.scss']
 })
-export class TestComponent {
+export class TestComponent  implements OnInit  {
   theme = "polus";
   hideContent: boolean;
-  constructor(private eventService: EventService, private themeService: ThemeService) {
+  selectedDirectory;
+  
+  constructor(private eventService: EventService, private themeService: ThemeService,
+    private route: ActivatedRoute) {
     this.hideContent = false;
     const searchEvent = this.eventService.get('search-click');
     searchEvent.subscribe(val => {
@@ -17,7 +22,24 @@ export class TestComponent {
         this.hideContent = !this.hideContent;
       }
     });
+    this.selectedDirectory = "Click left nav";
+    this.eventService.get('left-nav-click').subscribe ( val => { 
+      if (val){
+        this.selectedDirectory = val.id;
+      }
+      console.log(val);
+    });
 
+  }
+  ngOnInit(){
+    // set items as JsonConfig[] and pass into a LoadConfig service that validates and loads
+    const theme = this.route.snapshot.data.items.find( i => i.class == "theme")  as Theme;
+    const layout = this.route.snapshot.data.items.find( i => i.class == "layout");
+    
+    this.themeService.setActiveTheme(theme); //polus);
+    this.eventService.get('header').next(layout.header);
+    this.eventService.get('left-nav').next(layout.leftnav);
+    // this.eventService.get('tenant').next(this.tenantConfig);
   }
 
   changeTheme() {

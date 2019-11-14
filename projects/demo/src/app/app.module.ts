@@ -2,15 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, APP_INITIALIZER, Injector } from '@angular/core';
 import { UsersRouting } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CoreModule, EventService, LayoutComponent, LeftNavComponent, RightNavComponent, HeaderComponent, TenantNavComponent, LeftNavListComponent } from 'core';
+import { CoreModule, EventService, LayoutComponent, LeftNavComponent, RightNavComponent, HeaderComponent, TenantNavComponent, LeftNavListComponent } from 'temp-ls-ui-framework';
 import { TestComponent } from './test/test.component';
 import { CenterHeaderComponent } from './center-header/center-header.component';
 import { LabShareComponent } from './labshare/labshare.component';
-import { ConfigAPIService, RouteService } from 'core';
+import { ConfigAPIService, RouteService } from 'temp-ls-ui-framework';
 import { Router } from '@angular/router';
-
-import * as Components from "core";
-
 
 
 console.log('app module')
@@ -38,16 +35,16 @@ console.log('app module')
 })
 export class AppModule { }
 
- const dictionary = {
+const dictionary = {
   "TestComponent": TestComponent,
   "LabShareComponent": LabShareComponent,
   "CenterHeaderComponent": CenterHeaderComponent,
-}; 
+};
 
 
 export function initApp(configAPI: ConfigAPIService, eventService: EventService, injector: Injector, routeService: RouteService) {
   return () => {
-    
+
     /* configAPI.getRouteConfig().subscribe(routeConfig => {
       const router: Router = injector.get(Router);
       const dict = {...dictionary, ...(Components as any) };
@@ -57,6 +54,6 @@ export function initApp(configAPI: ConfigAPIService, eventService: EventService,
       .subscribe(globalConfig => {
         eventService.get('tenant').next(globalConfig.tenant);
       });
-    
+
   };
 }

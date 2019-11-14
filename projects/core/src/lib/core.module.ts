@@ -9,17 +9,17 @@ import { RightNavComponent } from './components/right-nav/right-nav.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TenantNavComponent } from './components/tenant-nav/tenant-nav.component';
 import { EventService } from './services/event.service';
- import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
- import {MatTreeModule, MatIconModule} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTreeModule, MatIconModule } from '@angular/material';
 import { CdkTreeModule } from '@angular/cdk/tree';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ThemeService } from './services/theme.service';
 import { LeftNavListComponent } from './components/left-nav-list/left-nav-list.component';
-import {SlideMenuModule} from 'primeng/slidemenu';
+import { SlideMenuModule } from 'primeng/slidemenu';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import {TreeModule} from 'primeng/tree';
+import { TreeModule } from 'primeng/tree';
 import { ConfigResolverService } from './services/config-resolver.service';
-import {ConfigAPIService} from './services/config-api.service';
+import { ConfigAPIService } from './services/config-api.service';
 import { RouteService } from './services/route.service';
 @NgModule({
   imports: [
@@ -27,14 +27,14 @@ import { RouteService } from './services/route.service';
     RouterModule,
     AngularDraggableModule,
     HttpClientModule,
-     BrowserAnimationsModule,
-     MatIconModule, 
-     MatTreeModule,
-     CdkTreeModule,
-     FontAwesomeModule,
-     SlideMenuModule,
-     DragDropModule ,
-     TreeModule
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatTreeModule,
+    CdkTreeModule,
+    FontAwesomeModule,
+    SlideMenuModule,
+    DragDropModule,
+    TreeModule
   ],
   declarations: [
     LayoutComponent,

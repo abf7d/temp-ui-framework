@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { EventService, ThemeService } from 'core';
+import { EventService, ThemeService } from 'temp-ls-ui-framework';
 import { polus, labshare } from '../theme/theme';
 import { ActivatedRoute } from '@angular/router';
-import { Theme } from 'core';
+import { Theme } from 'temp-ls-ui-framework';
 @Component({
   selector: 'app-labshare',
   templateUrl: './labshare.component.html',

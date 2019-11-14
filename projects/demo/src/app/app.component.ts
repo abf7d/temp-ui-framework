@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { EventService } from 'core';
+import { EventService } from 'temp-ls-ui-framework';
 import { ActivatedRoute } from '@angular/router';
 // const demoLeftNavItems = 
 //   {

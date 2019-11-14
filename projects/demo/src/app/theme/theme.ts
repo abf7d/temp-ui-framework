@@ -1,4 +1,4 @@
-import { Theme } from 'core/lib/common/types';
+import { Theme } from 'temp-ls-ui-framework/lib/common/types';
 
   export const labshare: Theme = {
     name: "labshare",

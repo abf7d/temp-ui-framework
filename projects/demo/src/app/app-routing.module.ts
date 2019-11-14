@@ -1,9 +1,9 @@
 import { RouterModule, Routes } from '@angular/router';
-import { LayoutComponent, LeftNavComponent, LeftNavListComponent, HeaderComponent, RightNavComponent, TenantNavComponent } from 'core';
+import { LayoutComponent, LeftNavComponent, LeftNavListComponent, HeaderComponent, RightNavComponent, TenantNavComponent } from 'temp-ls-ui-framework';
 import { TestComponent } from './test/test.component';
 import { CenterHeaderComponent } from './center-header/center-header.component';
 import { LabShareComponent } from './labshare/labshare.component';
-import { ConfigResolverService } from 'core';
+import { ConfigResolverService } from 'temp-ls-ui-framework';
 
 // dynamic routes with generic auth gaurd
 // clean comments and code

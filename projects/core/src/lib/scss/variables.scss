@@ -36,7 +36,7 @@ $menu-section-border-botom: none;
 $color-dark-content: #2B2B2B;
 
 
-$heading-bg-color: #2c2c2c;
+$heading-bg-color: var(--heading-bg-color);
 $heading-text-color: white;
 $heading-font-size: 18px;
 $heading-line-height: 2;

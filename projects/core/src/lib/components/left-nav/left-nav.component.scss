@@ -1,24 +1,24 @@
 @import "../../scss/variables.scss";
 
 * {
-  color: var(--left-nav-font-color);
-  font-size: var(--menu-font-size);
-  font-family: var(--menu-font-family);
+  color: $left-nav-font-color;
+  font-size: $menu-font-size;
+  font-family: $menu-font-family;
 }
 
 // .second-left-nav {
 //   width: 50px;
-//    background-color: var(--main-container-color); //#3e3e3e;
+//    background-color: $main-container-color; //#3e3e3e;
 // }
 .secondary-left-nav {
-  width: var(--content-menu-width);
-  background-color: var(--main-container-color);
-  // background-color: var(--main-container-color; //#3e3e3e;
+  width: $content-menu-width;
+  background-color: $main-container-color;
+  // background-color: $main-container-color; //#3e3e3e;
 }
 /* margins */
 .second-left-nav {
   margin: 0 2px 2px 1px;
-  border: 1px solid var(--color-border); //black;
+  border: 1px solid $color-border; //black;
 }
 
 /* Details */
@@ -41,7 +41,7 @@
 
 .side-toggles {
   display: flex;
-  background: var(--side-toggles);
+  background: $side-toggles;
 }
 
 .nih-button {
@@ -57,7 +57,7 @@
 .btn-container {
   display: flex;
   padding: 14px 0 14px 0;
-  border-bottom: 2px solid var(--color-border);
+  border-bottom: 2px solid $color-border;
 }
 .file-names {
   padding: 0px 0 14px 0;
@@ -97,17 +97,17 @@
   list-style: none;
 }
 .names img {
-  width: var(--icon-width);
-  margin-left: var(--icon-left-margin);
+  width: $icon-width;
+  margin-left: $icon-left-margin;
 }
 .names > * {
   background-size: 21px;
   background-repeat: no-repeat;
   padding-bottom: 2px;
   display: flex;
-  line-height: var(--menu-line-height);
-  padding: var(--menu-li-padding);
-  text-transform: var(--menu-text-transform);
+  line-height: $menu-line-height;
+  padding: $menu-li-padding;
+  text-transform: $menu-text-transform;
 }
 
 .name-color-0 {
@@ -126,45 +126,45 @@
   padding-left: 12px;
 }
 .menu-entry-txt {
-  padding-left: var(--space-between-icon-text);
+  padding-left: $space-between-icon-text;
   flex: 1;
 }
 
 .names {
-  border-bottom: var(--menu-section-border-botom);
+  border-bottom: $menu-section-border-botom;
   padding-bottom: 7px;
 }
 
 .active {
-  background-color: var(--active-menu-entry-bg-color); 
+  background-color: $active-menu-entry-bg-color; 
   .menu-entry-txt {
-    color: var(--active-menu-entry-txt); 
+    color: $active-menu-entry-txt; 
   }
 }
 .selection-open {
   color: #ddd;
 }
 .logo {
-  background-color: var(--heading-bg-color); 
-  color: var(--heading-text-color);
+  background-color: $heading-bg-color; 
+  color: $heading-text-color;
   display: flex;
   align-items: center;
 
-  line-height: var(--heading-line-height);
+  line-height: $heading-line-height;
 
   padding: 10px 12px;
   .menu-entry-txt {
-    font-size: var(--heading-font-size);
+    font-size: $heading-font-size;
   }
   .logo-img {
-    width: var(--heading-img-width);
-    margin-left: var(--icon-left-margin);
+    width: $heading-img-width;
+    margin-left: $icon-left-margin;
   }
 }
 
 .heading {
-  background-color: var(--heading-bg-color);
-  color: var(--heading-text-color);
+  background-color: $heading-bg-color;
+  color: $heading-text-color;
 }
 .drawer {
   padding-right: 13px;
@@ -174,7 +174,7 @@
 .window {
   width: auto;
   white-space: nowrap;
-  width: var(--content-menu-width);
+  width: $content-menu-width;
 }
 .top-window {
   width: max-content;
@@ -197,17 +197,17 @@
   display: flex;
 }
 :host::ng-deep p-tree .ui-tree {
-  background-color: var(--main-container-color);
+  background-color: $main-container-color;
   border: none;
-  color: var(--left-nav-font-color);
-  font-size: var(--menu-font-size);
-  font-family: var(--menu-font-family);
+  color: $left-nav-font-color;
+  font-size: $menu-font-size;
+  font-family: $menu-font-family;
 }
 
 .right-toggle {
-  background-color: var(--main-container-color);
+  background-color: $main-container-color;
   display: flex;
-  border-left: 1px solid var(--color-border);
+  border-left: 1px solid $color-border;
   align-items: center;
   width: 22px;
 }

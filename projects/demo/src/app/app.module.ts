@@ -10,6 +10,26 @@ import { ConfigAPIService, RouteService } from 'temp-ls-ui-framework';
 import { Router } from '@angular/router';
 
 
+import { polus, labshare } from './theme/theme';
+
+// import storage module and routesObject
+// import polus module and routesObject
+
+
+// compile routes
+// // 
+// const rouets = {
+//   "polus": polusRoutes,
+//   "storage": storageRoutes,
+// ]
+// pass that into router
+
+const customThemes = {
+  polus: polus,
+  labshare: labshare
+}
+
+
 console.log('app module')
 @NgModule({
   declarations: [
@@ -19,7 +39,7 @@ console.log('app module')
     LabShareComponent
   ],
   imports: [
-    CoreModule,
+    CoreModule.forRoot(customThemes),
     BrowserModule,
     UsersRouting
   ],

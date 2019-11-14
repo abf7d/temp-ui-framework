@@ -19,6 +19,7 @@ export class ThemeService {
   getActiveTheme(): Theme {
     return this.active;
   }
+  
   setActiveTheme(theme: Theme): void {
     this.active = theme;
 

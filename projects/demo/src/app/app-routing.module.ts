@@ -17,6 +17,9 @@ const routes: Routes = [
   },
   {
     path: 'polus',
+    data: {
+      theme: 'polus'
+    },
     component: LayoutComponent,
     resolve: { items: ConfigResolverService },
     children: [
@@ -56,6 +59,9 @@ const routes: Routes = [
 
   {
     path: 'labshare',
+    data: {
+      theme: 'labshare'
+    },
     component: LayoutComponent,
     resolve: { items: ConfigResolverService },
     children: [
@@ -96,6 +102,9 @@ const routes: Routes = [
     path: 'noleft',
     component: LayoutComponent,
     resolve: { items: ConfigResolverService },
+    data: {
+      theme: 'labshare'
+    },
     children: [
       {
         path: '',

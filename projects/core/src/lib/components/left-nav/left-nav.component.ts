@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { EventService } from '../../services/event.service';
 import { ArrayDataSource } from '@angular/cdk/collections';
 import { FlatTreeControl } from '@angular/cdk/tree';
-import { faAngleRight, faAngleDown, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { Identifier } from 'estree';
 import { MenuItem } from 'primeng/api';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
@@ -39,19 +38,11 @@ interface INavEvent {
   styleUrls: ['./left-nav.component.scss']
 })
 export class LeftNavComponent implements OnInit {
-
-
   public config: INavConfig;
   public treeData: any[];
   public header;
   public dataSource: any;
   public navExpanded: boolean;
-
-  // Needed because the consuming app doesn't recognize normal 
-  // font-awesome css classes
-  public faAngleRight = faAngleRight;
-  public faAngleDown = faAngleDown;
-  public faAngleLeft = faAngleLeft;
 
   public treeControl:FlatTreeControl<ExampleFlatNode>;
   public treeElementPaddingOffset:number;

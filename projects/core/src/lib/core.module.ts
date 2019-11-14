@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AngularDraggableModule } from 'angular2-draggable';
@@ -12,8 +12,6 @@ import { EventService } from './services/event.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTreeModule, MatIconModule } from '@angular/material';
 import { CdkTreeModule } from '@angular/cdk/tree';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { ThemeService } from './services/theme.service';
 import { LeftNavListComponent } from './components/left-nav-list/left-nav-list.component';
 import { SlideMenuModule } from 'primeng/slidemenu';
 import { DragDropModule } from '@angular/cdk/drag-drop';
@@ -21,6 +19,12 @@ import { TreeModule } from 'primeng/tree';
 import { ConfigResolverService } from './services/config-resolver.service';
 import { ConfigAPIService } from './services/config-api.service';
 import { RouteService } from './services/route.service';
+
+const DefaultThemes = {
+  default: "default"
+}
+
+
 @NgModule({
   imports: [
     CommonModule,
@@ -31,7 +35,6 @@ import { RouteService } from './services/route.service';
     MatIconModule,
     MatTreeModule,
     CdkTreeModule,
-    FontAwesomeModule,
     SlideMenuModule,
     DragDropModule,
     TreeModule
@@ -46,10 +49,13 @@ import { RouteService } from './services/route.service';
   ],
   providers: [
     EventService,
-    ThemeService,
     ConfigResolverService,
     ConfigAPIService,
-    RouteService
+    RouteService,
+    {
+      provide: "THEME",
+      useValue: DefaultThemes
+    },
   ],
   exports: [
     LeftNavComponent
@@ -57,4 +63,20 @@ import { RouteService } from './services/route.service';
   entryComponents: [
   ]
 })
-export class CoreModule { } // Name is temporary
+export class CoreModule {
+  public static forRoot(themeDictionaries?): ModuleWithProviders {
+
+    if (themeDictionaries) { Object.keys(themeDictionaries).forEach(key => DefaultThemes[key] = themeDictionaries[key]); }
+
+    console.log('themes', DefaultThemes);
+    return {
+      ngModule: CoreModule,
+      providers: [
+        {
+          provide: "THEME",
+          useValue: DefaultThemes
+        }
+      ]
+    };
+  }
+}

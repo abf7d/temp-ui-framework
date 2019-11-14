@@ -1,5 +1,3 @@
-
-
 <div class="secondary-left-nav" ngResizable [rzHandles]="'e'" position="'0,0'" *ngIf="navExpanded">
 
     <div class="btn-container file-names">
@@ -8,61 +6,47 @@
             <div class="menu-entry-txt"> {{header.text}} </div>
         </div>
         <div class="top-window">
-        <div class="window">
-        <cdk-tree 
-            [dataSource]="dataSource" 
-            [treeControl]="treeControl"
-            class="names">
-            <cdk-tree-node 
-                [style.paddingLeft]="getPadding(node.level)" 
-                [style.display]="shouldRender(node) ? 'flex' : 'none'" 
-                *cdkTreeNodeDef="let node"
-                class="example-tree-node"
-                (click)="leafClick(node)">
-                <div 
-                    [style.visibility]="node.expandable ? 'visible' : 'hidden'"
-                    (click)="node.isExpanded = !node.isExpanded"
-                    class="selection-open">
-                    
-                    <fa-icon 
+            <div class="window">
+                <cdk-tree [dataSource]="dataSource" [treeControl]="treeControl" class="names">
+                    <cdk-tree-node [style.paddingLeft]="getPadding(node.level)"
+                        [style.display]="shouldRender(node) ? 'flex' : 'none'" *cdkTreeNodeDef="let node"
+                        class="example-tree-node" (click)="leafClick(node)">
+                        <div [style.visibility]="node.expandable ? 'visible' : 'hidden'"
+                            (click)="node.isExpanded = !node.isExpanded" class="selection-open">
+
+                            <!-- <fa-icon 
                         [icon]="treeControl.isExpanded(node) ? faAngleDown : faAngleRight"
                         class="drawer">
-                    </fa-icon>
-                </div>
+                    </fa-icon> -->
+                        </div>
 
-                <div> 
-                    <img src="{{node.img}}" /> 
-                </div>
-                <div class="menu-entry-txt" >
-                    {{node.name}}
-                </div>
-            </cdk-tree-node>
-            
-            <cdk-tree-node 
-                [style.display]="shouldRender(node) ? 'flex' : 'none'"
-                [style.paddingLeft]="getPadding(node.level)" 
-                *cdkTreeNodeDef="let node; when: hasChild" 
-               >
-             
+                        <div>
+                            <img src="{{node.img}}" />
+                        </div>
+                        <div class="menu-entry-txt">
+                            {{node.name}}
+                        </div>
+                    </cdk-tree-node>
 
-                <div 
-                    [style.visibility]="node.expandable ? 'visible' : 'hidden'"
-                    (click)="node.isExpanded = !node.isExpanded"
-                    
-                    class="selection-open" >
+                    <cdk-tree-node [style.display]="shouldRender(node) ? 'flex' : 'none'"
+                        [style.paddingLeft]="getPadding(node.level)" *cdkTreeNodeDef="let node; when: hasChild">
 
-                    <fa-icon 
+
+                        <div [style.visibility]="node.expandable ? 'visible' : 'hidden'"
+                            (click)="node.isExpanded = !node.isExpanded" class="selection-open">
+
+                            <!-- <fa-icon 
                         class="drawer" 
                         [icon]="treeControl.isExpanded(node) ? faAngleDown : faAngleRight ">
-                    </fa-icon>
-                </div>
-                <div> <img src="{{node.img}}" /> </div>
-                <div class="menu-entry-txt" >
-                    {{node.name}}
-                </div>
-            </cdk-tree-node>
-        </cdk-tree>
-        <!-- <p-tree [value]="items">
+                    </fa-icon> -->
+                        </div>
+                        <div> <img src="{{node.img}}" /> </div>
+                        <div class="menu-entry-txt">
+                            {{node.name}}
+                        </div>
+                    </cdk-tree-node>
+                </cdk-tree>
+                <!-- <p-tree [value]="items">
             <ng-template let-node pTemplate="default">
                 <span>Test</span>
             </ng-template>
@@ -70,18 +54,18 @@
                 <h3>Test 2</h3>
             </ng-template>
         </p-tree> -->
+            </div>
+        </div>
+
     </div>
+
+
+
 </div>
-
-</div>
-
-
-
- </div>
- <div class="right-toggle" (click)="toggleLeftNav()">
-    <fa-icon 
+<div class="right-toggle" (click)="toggleLeftNav()">
+    <!-- <fa-icon 
     class="drawer" 
     [icon]="navExpanded ? faAngleLeft : faAngleRight ">
-</fa-icon>
-     <div></div>
- </div>
+</fa-icon> -->
+    <div></div>
+</div>

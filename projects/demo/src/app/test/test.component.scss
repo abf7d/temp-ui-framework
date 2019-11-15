@@ -1,32 +1,34 @@
+@import "node_modules/temp-ls-ui-framework/scss/variables.scss";
+
 * {
-  color: var(--main-text-color);
+  color: $main-text-color;
 }
 
 .local-footer {
   height: 40px;
-  background-color: var(--main-container-color);
+  background-color: $main-container-color;
 }
 .main-content {
   flex: 1;
 }
 .inner-main {
-  background-color: var(--secondary-container-color);
+  background-color: $secondary-container-color;
   flex: 1;
   display: flex;
 }
 
 .local-footer {
   margin: 2px 0 0 0;
-  border: 1px solid var(--color-border);
+  border: 1px solid $color-border;
   border-bottom: none;
 }
 
 /* color */
 .main-content {
-  background-color: var(--secondary-container-color);
+  background-color: $secondary-container-color;
 }
 .action-buttons {
-  background-color: var(--secondary-container-color);
+  background-color: $secondary-container-color;
   height: 34px;
   display: flex;
   justify-content: space-between;
@@ -70,15 +72,15 @@
 }
 select,
 button {
-  background-color: var(--input-background);
+  background-color: $input-background;
   border-radius: 4px;
   font-size: 14px;
-  border-color: var(--light-accent-color);
-  color: var(--light-accent-color);
+  border-color: $light-accent-color;
+  color: $light-accent-color;
   font-weight: bold;
 }
 button {
-  border: 1px solid var(--light-accent-color);
+  border: 1px solid $light-accent-color;
   padding: 0 3px 0 3px;
 }
 
@@ -95,14 +97,14 @@ button {
 }
 
 .local-footer > div.active {
-  background-color: var(--drawer-color);
+  background-color: $drawer-color;
   border-bottom: none;
 }
 
 .drawer {
-  background-color: var(--drawer-color);
+  background-color: $drawer-color;
   height: 160px;
-  border-left: 1px solid var(--color-border);
+  border-left: 1px solid $color-border;
 }
 
 .drawer-container {
@@ -110,7 +112,7 @@ button {
 }
 .right-inner {
   width: 22px;
-  background-color: var(--color-border);
+  background-color: $color-border;
 }
 .left-inner {
   flex: 1;
@@ -134,7 +136,7 @@ sc-vision-left-nav {
 .theme-btn {
   border: none;
   color: black;
-  background-color: var(--active-menu-entry-bg-color);
+  background-color: $active-menu-entry-bg-color;
   padding: 5px 13px;
   text-align: center;
   text-decoration: none;

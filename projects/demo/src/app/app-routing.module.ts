@@ -59,9 +59,9 @@ const routes: Routes = [
 
   {
     path: 'labshare',
-    data: {
-      theme: 'labshare'
-    },
+    // data: {
+    //   theme: 'labshare'
+    // },
     component: LayoutComponent,
     resolve: { items: ConfigResolverService },
     children: [

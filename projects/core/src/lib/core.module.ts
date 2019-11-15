@@ -19,11 +19,12 @@ import { TreeModule } from 'primeng/tree';
 import { ConfigResolverService } from './services/config-resolver.service';
 import { ConfigAPIService } from './services/config-api.service';
 import { RouteService } from './services/route.service';
+import { DefaultTheme } from './default-theme';
+import { Dictionary, Theme, THEME_TOKEN } from './common/types';
 
-const DefaultThemes = {
-  default: "default"
+const themes: Dictionary<Theme> = {
+  default: DefaultTheme
 }
-
 
 @NgModule({
   imports: [
@@ -53,8 +54,8 @@ const DefaultThemes = {
     ConfigAPIService,
     RouteService,
     {
-      provide: "THEME",
-      useValue: DefaultThemes
+      provide: THEME_TOKEN,
+      useValue: themes
     },
   ],
   exports: [
@@ -64,17 +65,15 @@ const DefaultThemes = {
   ]
 })
 export class CoreModule {
-  public static forRoot(themeDictionaries?): ModuleWithProviders {
+  public static forRoot(themeDictionaries?: Dictionary<Theme>): ModuleWithProviders {
+    if (themeDictionaries) { Object.keys(themeDictionaries).forEach(key => themes[key] = themeDictionaries[key]); }
 
-    if (themeDictionaries) { Object.keys(themeDictionaries).forEach(key => DefaultThemes[key] = themeDictionaries[key]); }
-
-    console.log('themes', DefaultThemes);
     return {
       ngModule: CoreModule,
       providers: [
         {
-          provide: "THEME",
-          useValue: DefaultThemes
+          provide: THEME_TOKEN,
+          useValue: themes
         }
       ]
     };

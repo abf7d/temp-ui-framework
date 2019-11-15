@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { EventService, ThemeService } from 'temp-ls-ui-framework';
+import { EventService } from 'temp-ls-ui-framework';
 import { ActivatedRoute } from '@angular/router';
-import { Theme } from 'temp-ls-ui-framework';
+
 @Component({
   selector: 'app-labshare',
   templateUrl: './labshare.component.html',
@@ -14,7 +14,6 @@ export class LabShareComponent implements OnInit {
 
   constructor(
     private eventService: EventService,
-    private themeService: ThemeService,
     private route: ActivatedRoute
   ) {
     this.hideContent = false;
@@ -34,27 +33,12 @@ export class LabShareComponent implements OnInit {
 
   }
   ngOnInit() {
-    const theme = this.route.snapshot.data.items.find(i => i.class == "theme") as Theme;
     const layout = this.route.snapshot.data.items.find(i => i.class == "layout")
 
-
-    // this.themeService.setActiveTheme(theme); //labshare);
     this.eventService.get('header').next(layout.header);
     this.eventService.get('left-nav').next(layout.leftnav);
 
     //  this.eventService.get('tenant').next(this.tenantConfig);
   }
 
-
-
-  changeTheme() {
-    // if (this.theme === "polus") {
-    //   this.themeService.setActiveTheme(labshare);
-    //   this.theme = "labshare";
-    // } else {
-    //   this.themeService.setActiveTheme(polus);
-    //   this.theme = "polus"
-    // }
-
-  }
 }

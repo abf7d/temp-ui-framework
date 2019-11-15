@@ -29,8 +29,6 @@ const customThemes = {
   labshare: labshare
 }
 
-
-console.log('app module')
 @NgModule({
   declarations: [
     AppComponent,

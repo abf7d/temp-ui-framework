@@ -35,20 +35,8 @@ export class TestComponent implements OnInit {
     const theme = this.route.snapshot.data.items.find(i => i.class == "theme") as any;
     const layout = this.route.snapshot.data.items.find(i => i.class == "layout");
 
-    // this.themeService.setActiveTheme(theme); //polus);
     this.eventService.get('header').next(layout.header);
     this.eventService.get('left-nav').next(layout.leftnav);
-    // this.eventService.get('tenant').next(this.tenantConfig);
   }
 
-  changeTheme() {
-    // if (this.theme === "polus") {
-    //   this.themeService.setActiveTheme(labshare);
-    //   this.theme = "labshare";
-    // } else {
-    //   this.themeService.setActiveTheme(polus);
-    //   this.theme = "polus"
-    // }
-
-  }
 }

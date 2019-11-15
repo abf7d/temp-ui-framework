@@ -1,12 +1,14 @@
-import { Injectable } from "@angular/core";
-import { Theme } from '../common/types';
+import { Injectable, Inject } from "@angular/core";
+import { Theme, Dictionary, THEME_TOKEN } from '../common/types';
 
 @Injectable({
   providedIn: "root"
 })
 export class ThemeService {
-  private active: Theme;
+  private activeTheme: Theme;
   private availableThemes: Theme[] = [];
+
+  constructor(@Inject(THEME_TOKEN) private themes: Dictionary<Theme>) { }
 
   setThemes(themes: Theme[]) {
     this.availableThemes = themes;
@@ -17,16 +19,20 @@ export class ThemeService {
   }
 
   getActiveTheme(): Theme {
-    return this.active;
+    return this.activeTheme;
   }
-  
-  setActiveTheme(theme: Theme): void {
-    this.active = theme;
 
-    Object.keys(this.active.properties).forEach(property => {
+  setActiveTheme(name: string): void {
+    if (!this.themes.hasOwnProperty(name)) {
+      throw new Error(`Theme with name ${name} was not found`);
+    }
+
+    this.activeTheme = this.themes[name];
+
+    Object.keys(this.activeTheme.properties).forEach(property => {
       document.documentElement.style.setProperty(
         property,
-        this.active.properties[property]
+        this.activeTheme.properties[property]
       );
     });
   }

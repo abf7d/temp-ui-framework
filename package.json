@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "copysass": "cp -r ./projects/core/src/lib/scss ./dist"
+    "copysass": "cp -r ./projects/core/src/lib/scss ./dist",
+    "b": "ng build && npm run copysass"
   },
   "private": true,
   "dependencies": {

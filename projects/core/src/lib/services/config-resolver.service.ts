@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { take } from 'rxjs/operators'
 import { ActivatedRouteSnapshot } from '@angular/router';
 import { Resolve } from '@angular/router';
-import { forkJoin } from 'rxjs';
+import { forkJoin, of } from 'rxjs';
 import { ConfigAPIService } from './config-api.service';
 import { ThemeService } from './theme.service';
 
@@ -25,9 +25,11 @@ export class ConfigResolverService implements Resolve<any> {
             this.themeService.setActiveTheme('default'); // todo: create token
         }
 
-        return forkJoin([
-            this.apiService.getThemeConfig(routePath).pipe(take(1)),
-            this.apiService.getLayoutConfig(routePath).pipe(take(1))
-        ]);
+        return of();
+
+        // return forkJoin([
+        //     this.apiService.getThemeConfig(routePath).pipe(take(1)),
+        //     this.apiService.getLayoutConfig(routePath).pipe(take(1))
+        // ]);
     }
 }

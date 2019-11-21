@@ -40,11 +40,4 @@ export class ThemeService {
       );
     });
   }
-
-  setActiveConfig(name: string): void {
-    if (!this.configs.hasOwnProperty(name)) {
-      throw new Error(`Config with name ${name} was not found`);
-    }
-    this.eventService.get(CONFIG_TOKEN).next(this.configs[name]);
-  }
 }

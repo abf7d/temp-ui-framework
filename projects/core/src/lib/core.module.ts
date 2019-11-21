@@ -61,6 +61,10 @@ const configs: any = {
       provide: THEME_TOKEN,
       useValue: themes
     },
+    {
+      provide: CONFIG_TOKEN,
+      useValue: configs
+    }
   ],
   exports: [
     LeftNavComponent

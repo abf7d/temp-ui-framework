@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EventService, ThemeService } from 'temp-ls-ui-framework';
-import { ActivatedRoute } from '@angular/router';
+import { EventService } from 'temp-ls-ui-framework';
 
 @Component({
   selector: 'app-test',
@@ -12,8 +11,7 @@ export class TestComponent implements OnInit {
   hideContent: boolean;
   selectedDirectory;
 
-  constructor(private eventService: EventService, private themeService: ThemeService,
-    private route: ActivatedRoute) {
+  constructor(private eventService: EventService) {
     this.hideContent = false;
     const searchEvent = this.eventService.get('search-click');
     searchEvent.subscribe(val => {

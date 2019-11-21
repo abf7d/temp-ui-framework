@@ -18,32 +18,37 @@
 
 <div class="menu" [ngClass]="{'expand-menu': showMenu, 'contract-menu': !showMenu }">
 
-    <div  *ngIf="config !== null" class="null-container">
+    <div *ngIf="config !== null" class="null-container">
         <div class="menu-left">
             <div class="tenant-container">
-                    <i class="icon-Menu menu-toggle" (click)="expandMenu()" ></i>
-                    <!-- <div (click)="expandMenu()" class="tenant-btn menu-btn">X</div> -->
-                <div class="tenant-btn-container" [class.selected]="app.selected" *ngFor="let app of config.applist">
-                    <div [className]="app.icon + ' tenant-btn'" (click)="selectApp(app)"></div>
+                <i class="icon-Menu menu-toggle" (click)="expandMenu()"></i>
+                <!-- <div (click)="expandMenu()" class="tenant-btn menu-btn">X</div> -->
+                <div class="app-list">
+                    <div class="tenant-btn-container" [class.selected]="app.selected"
+                        *ngFor="let app of config.applist">
+                        <div [className]="app.icon + ' tenant-btn'" (click)="selectApp(app)"></div>
+                    </div>
                 </div>
                 <div class="expand"></div>
                 <div class="admin-list">
                     <div class=" tenant-btn-container" [class.selected]="app.selected"
                         *ngFor="let app of config.adminlist">
-                        <div [className]="app.icon + ' tenant-btn'"  (click)="selectApp(app)"></div>
+                        <div [className]="app.icon + ' tenant-btn'" (click)="selectApp(app)"></div>
                     </div>
                 </div>
-                
-                <i class="icon-Teams menu-toggle" (click)="expandMenu()" ></i>
+
+                <i class="icon-Teams menu-toggle" (click)="expandMenu()"></i>
             </div>
 
         </div>
         <div class="menu-right">
             <div class="container-right">
 
-
-                <div class="tenant-btn-container" [class.selected]="app.selected" *ngFor="let app of config.applist">
-                    <div class="tenant-txt" (click)="selectApp(app)">{{app.text}}</div>
+                <div class="app-list">
+                    <div class="tenant-btn-container" [class.selected]="app.selected"
+                        *ngFor="let app of config.applist">
+                        <div class="tenant-txt" (click)="selectApp(app)">{{app.text}}</div>
+                    </div>
                 </div>
                 <div class="expand"></div>
                 <div class="admin-list">
@@ -52,7 +57,8 @@
                         <div class="tenant-txt" (click)="selectApp(app)">{{app.text}}</div>
                     </div>
                 </div>
-                <div class="text-spacer" ></div>
+                <div class="text-spacer"></div>
             </div>
         </div>
-</div></div>
+    </div>
+</div>

@@ -47,11 +47,11 @@
   // border-radius: 5px;
   font-size: 22px;
     text-align: center;
-    padding: 20px 22px 20px 16px;
+    padding: 18px 22px 18px 16px;
 }
 
-.tenant-btn-container.selected {
-  // background-color: $active-menu-entry-bg-color;
+.tenant-btn-container > div:last-child {
+  padding-bottom: 20px;
 }
 .tenant-btn-container {
   padding: 1px;
@@ -117,8 +117,8 @@
 .tenant-txt {
   width: 200px;
 
-  margin: 14px 19px;
-  line-height: 37px;
+  margin: 4px 19px;
+    line-height: 35px;
 }
 
 .menu-btn {
@@ -156,8 +156,8 @@
   display: flex;
 }
 
-.container-right > .tenant-btn-container:first-child {
-  padding-top: 89px
+.container-right .app-list > .tenant-btn-container:first-child {
+  padding-top: 89px;
 }
 .container-right .admin-list {
   
@@ -208,4 +208,8 @@
 
 .text-spacer {
   height: 83px;
+}
+
+.app-list {
+  padding-bottom: 20px;
 }

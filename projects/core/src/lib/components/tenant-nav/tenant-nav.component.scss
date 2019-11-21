@@ -20,6 +20,7 @@
 }
 .expand {
   flex: 1;
+  border-top: 1px solid $left-nav-font-color;
   // background-color: $main-container-color;
 }
 .avatar-holder {
@@ -37,15 +38,20 @@
 }
 
 .tenant-btn {
-  background-color: $left-nav-font-color;
-  height: 40px;
-  width: 40px;
-  margin: 14px 19px;
-  border-radius: 5px;
+  // background-color: $left-nav-font-color;
+  // // height: 40px;
+  // // width: 40px;
+  // // margin: 14px 19px;
+  // margin: 14px 16px;
+  // padding: 8px;
+  // border-radius: 5px;
+  font-size: 22px;
+    text-align: center;
+    padding: 20px 22px 20px 16px;
 }
 
 .tenant-btn-container.selected {
-  background-color: $active-menu-entry-bg-color;
+  // background-color: $active-menu-entry-bg-color;
 }
 .tenant-btn-container {
   padding: 1px;
@@ -92,7 +98,7 @@
   border-right: 1px solid black;
 }
 .contract-menu {
-  width: 80px;
+  width: 70px;
   transition: 0.2s;
   overflow-x: hidden;
 }
@@ -105,13 +111,14 @@
   flex-direction: column;
   flex: 1;
   background-color: $heading-bg-color;
+  display: flex;
 }
 
 .tenant-txt {
   width: 200px;
 
-  height: 40px;
   margin: 14px 19px;
+  line-height: 37px;
 }
 
 .menu-btn {
@@ -121,13 +128,21 @@
   font-size: 2em;
   font-weight: bold;
   text-align: center;
-  width: 40px;
-  height: 40px;
+  // width: 40px;
+  // height: 40px;
   border-radius: 5px;
+}
+.menu-toggle {
+  font-size: 20px;
+  text-align: center;
+  color: #fff;
+  margin-left: -12px;
+  padding: 25px;
+  padding-top: 35px
 }
 
 .spacer {
-  width: 80px;
+  width: 70px;
   height: 1px;
 }
 
@@ -138,22 +153,24 @@
 
 .menu-right {
   flex: 1;
+  display: flex;
 }
 
 .container-right > .tenant-btn-container:first-child {
-  padding-top: 71px;
+  padding-top: 89px
 }
 .container-right .admin-list {
-  border-top: 1px solid $left-nav-font-color;
+  
   padding-top: 10px;
   margin-top: 10px;
+  padding-bottom: 2px;
 }
 .container-right .admin-list ~ .container-right .admin-list {
   border: none;
 }
 
-.menu-left .admin-list {
-  border-top: 1px solid $left-nav-font-color;
+.admin-list {
+  border-bottom: 1px solid $left-nav-font-color;
   padding-top: 10px;
   margin-top: 10px;
 }
@@ -182,8 +199,13 @@
 }
 
 .selected .tenant-btn {
-  background-color: black;
+  // background-color: black;
+  border-left: 3px solid white;
 }
 .selected .tenant-txt {
-  color: black;
+  // color: black;
+}
+
+.text-spacer {
+  height: 83px;
 }

@@ -22,3 +22,18 @@ html,
 body {
   font-family: "PT Sans", sans-serif;
 }
+// @import "./src/styles/fonts";
+@import "./fonts/css/lsfontset.css";
+
+// $lsfontset-woff-font-path: "./fonts/lsfontset.woff";
+// $lsfontset-woff2-font-path: "./fonts/lsfontset.woff2";
+// $font-family-brand: 'lsfontset';
+
+// // @import "./src/styles/fonts";
+// @font-face {
+//     font-family: $font-family-brand; //'archisticobold';
+//     src:url($lsfontset-woff2-font-path) format('woff2'),
+//         url($lsfontset-woff-font-path) format('woff');
+//     font-weight: normal;
+//     font-style: normal;
+// }

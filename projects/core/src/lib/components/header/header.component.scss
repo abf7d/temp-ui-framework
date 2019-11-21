@@ -23,9 +23,7 @@
   display: flex;
   align-items: center;
 }
-.h-group > div {
-  padding: 10px;
-}
+
 .h-group img {
   width: 35px;
 }
@@ -87,4 +85,18 @@ li > ul.drop-menu {
 .nav-top-content {
   display: flex;
   align-items: center;
+}
+.header-parent:last-child  .h-group:last-child {
+  padding-right:68px;
+}
+
+.fl {
+  font-size: 20px;
+ // border-right: solid 1px var(--main-text-color);
+  padding-right: 5px;
+  border-right: 1px solid #888;
+    padding: 5px 25px
+}
+.h-group > div:last-child > .fl:last-child {
+  border-right: none;
 }

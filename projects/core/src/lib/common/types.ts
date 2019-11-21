@@ -8,3 +8,4 @@ export interface Theme {
 }
 
 export const THEME_TOKEN = "THEME";
+export const CONFIG_TOKEN = "CONFIG";

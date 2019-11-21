@@ -32,11 +32,11 @@ export class TestComponent implements OnInit {
   }
   ngOnInit() {
     // set items as JsonConfig[] and pass into a LoadConfig service that validates and loads
-    const theme = this.route.snapshot.data.items.find(i => i.class == "theme") as any;
-    const layout = this.route.snapshot.data.items.find(i => i.class == "layout");
+    // const theme = this.route.snapshot.data.items.find(i => i.class == "theme") as any;
+    // const layout = this.route.snapshot.data.items.find(i => i.class == "layout");
 
-    this.eventService.get('header').next(layout.header);
-    this.eventService.get('left-nav').next(layout.leftnav);
+    // this.eventService.get('header').next(layout.header);
+    // this.eventService.get('left-nav').next(layout.leftnav);
   }
 
 }

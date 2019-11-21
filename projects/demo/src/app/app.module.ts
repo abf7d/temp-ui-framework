@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 
 
 import { polus, labshare } from './theme/theme';
+import { polusConfig, labshareConfig } from './theme/config';
 
 // import storage module and routesObject
 // import polus module and routesObject
@@ -27,7 +28,11 @@ import { polus, labshare } from './theme/theme';
 const customThemes = {
   polus: polus,
   labshare: labshare
-}
+};
+const customConfigs = {
+  polus: polusConfig,
+  labshare: labshareConfig
+};
 
 @NgModule({
   declarations: [
@@ -37,7 +42,7 @@ const customThemes = {
     LabShareComponent
   ],
   imports: [
-    CoreModule.forRoot(customThemes),
+    CoreModule.forRoot(customThemes, customConfigs),
     BrowserModule,
     UsersRouting
   ],

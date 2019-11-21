@@ -1,37 +1,40 @@
-$color-dark-content: #2B2B2B;
+// @import "~font-awesome/css/font-awesome.css";
+@import "~node_modules/font-awesome/css/font-awesome.css";
 
-$secondary-bar: #292929;
-$secondary-container-color: #323232;
-$main-container-color: #3E3E3E;
-$color-border: black;
-$main-text-color: #c2c2c2;
-$side-toggles: black;
-$app-name: #c2c2c2;
-$inner-main-content: #191919;
-$active-menu-color: #1f1f1f;
-$input-background: #1E1E1E;
-$drawer-color: #292929;
-$light-accent-color: #656565;
+$color-dark-content:var(--color-dark-content);// #2B2B2B;
+
+$secondary-bar: var(--secondary-bar);//#292929;
+$secondary-container-color:var(--secondary-container-color);// #323232;
+$main-container-color: var(--main-container-color);//#3E3E3E;
+$color-border: var(--color-border);//black;
+$main-text-color: var(--main-text-color);//#c2c2c2;
+$side-toggles:var(--side-toggles);// black;
+$app-name: var(--app-name);//#c2c2c2;
+$inner-main-content: var(--inner-main-content);//#191919;
+$active-menu-color:var(--active-menu-color);// #1f1f1f;
+$input-background:var(--input-background);//#1E1E1E;
+$drawer-color: var(--drawer-color);//#292929;
+$light-accent-color: var(--light-accent-color);//#656565;
 
 
 // Left Nav variables
-$space-between-icon-text: 16px;
-$icon-width: 21px;
-$icon-left-margin: 0px;
-$menu-font: "Segoe UI";
-$menu-font-family: 'Poppins', sans-serif;
-$menu-font-size: 16px;
-$menu-line-height: 2.5;;
-$menu-text-transform: inherit;
-$content-menu-width: 300px;
-$left-nav-font-color: #c2c2c2;;
+$space-between-icon-text: var(--space-between-icon-text);//16px;
+$icon-width: var(--icon-width);//21px;
+$icon-left-margin: var(--icon-left-margin);//0px;
+$menu-font: var(--menu-font);//"Segoe UI";
+$menu-font-family: var(--menu-font-family);//'Poppins', sans-serif;
+$menu-font-size: var(--menu-font-size);//16px;
+$menu-line-height: var(--menu-line-height);//2.5;;
+$menu-text-transform: var(--menu-text-transform);//inherit;
+$content-menu-width: var(--content-menu-width);//300px;
+$left-nav-font-color: var(--left-nav-font-color);//#c2c2c2;;
 
-$active-menu-entry-bg-color: #BCBCBC;
-$active-menu-entry-txt: #210a58;
+$active-menu-entry-bg-color:var(--active-menu-entry-bg-color);// #BCBCBC;
+$active-menu-entry-txt: var(--active-menu-entry-txt);//#210a58;
 
-$menu-li-padding: 0px 12px;
-$menu-section-border-botom: none;
-$color-dark-content: #2B2B2B;
+$menu-li-padding: var(--menu-li-padding);//0px 12px;
+$menu-section-border-botom: var(--menu-section-border-botom);//none;
+$color-dark-content: var(--color-dark-content);//#2B2B2B;
 
 
 $heading-bg-color: var(--heading-bg-color);

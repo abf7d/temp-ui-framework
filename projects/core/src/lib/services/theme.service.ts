@@ -1,5 +1,6 @@
 import { Injectable, Inject } from "@angular/core";
-import { Theme, Dictionary, THEME_TOKEN } from '../common/types';
+import { Theme, Dictionary, THEME_TOKEN,CONFIG_TOKEN } from '../common/types';
+import { EventService } from './event.service';
 
 @Injectable({
   providedIn: "root"
@@ -8,7 +9,10 @@ export class ThemeService {
   private activeTheme: Theme;
   private availableThemes: Theme[] = [];
 
-  constructor(@Inject(THEME_TOKEN) private themes: Dictionary<Theme>) { }
+  constructor(
+    @Inject(THEME_TOKEN) private themes: Dictionary<Theme>, 
+    @Inject(CONFIG_TOKEN) private configs: any,
+    @Inject(EventService) private eventService: EventService) { }
 
   setThemes(themes: Theme[]) {
     this.availableThemes = themes;
@@ -35,5 +39,12 @@ export class ThemeService {
         this.activeTheme.properties[property]
       );
     });
+  }
+
+  setActiveConfig(name: string): void {
+    if (!this.configs.hasOwnProperty(name)) {
+      throw new Error(`Config with name ${name} was not found`);
+    }
+    this.eventService.get(CONFIG_TOKEN).next(this.configs[name]);
   }
 }

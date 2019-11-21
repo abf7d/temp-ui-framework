@@ -33,10 +33,10 @@ export class LabShareComponent implements OnInit {
 
   }
   ngOnInit() {
-    const layout = this.route.snapshot.data.items.find(i => i.class == "layout")
+    // const layout = this.route.snapshot.data.items.find(i => i.class == "layout")
 
-    this.eventService.get('header').next(layout.header);
-    this.eventService.get('left-nav').next(layout.leftnav);
+    // this.eventService.get('header').next(layout.header);
+    // this.eventService.get('left-nav').next(layout.leftnav);
 
     //  this.eventService.get('tenant').next(this.tenantConfig);
   }

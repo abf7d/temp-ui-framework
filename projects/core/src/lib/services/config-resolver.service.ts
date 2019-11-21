@@ -25,6 +25,13 @@ export class ConfigResolverService implements Resolve<any> {
             this.themeService.setActiveTheme('default'); // todo: create token
         }
 
+        if (route.routeConfig && route.routeConfig.data && route.routeConfig.data.config) {
+            this.themeService.setActiveConfig(route.routeConfig.data.config);
+        } else {
+            this.themeService.setActiveConfig('default'); // todo: create token
+        }
+
+
         return of();
 
         // return forkJoin([

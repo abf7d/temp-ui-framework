@@ -20,10 +20,14 @@ import { ConfigResolverService } from './services/config-resolver.service';
 import { ConfigAPIService } from './services/config-api.service';
 import { RouteService } from './services/route.service';
 import { DefaultTheme } from './default-theme';
-import { Dictionary, Theme, THEME_TOKEN } from './common/types';
+import { DefaultConfig } from './default-config';
+import { Dictionary, Theme, THEME_TOKEN, CONFIG_TOKEN } from './common/types';
 
 const themes: Dictionary<Theme> = {
   default: DefaultTheme
+}
+const configs: any = {
+  default: DefaultConfig
 }
 
 @NgModule({
@@ -65,15 +69,19 @@ const themes: Dictionary<Theme> = {
   ]
 })
 export class CoreModule {
-  public static forRoot(themeDictionaries?: Dictionary<Theme>): ModuleWithProviders {
+  public static forRoot(themeDictionaries?: Dictionary<Theme>, configDictionaries?: any): ModuleWithProviders {
     if (themeDictionaries) { Object.keys(themeDictionaries).forEach(key => themes[key] = themeDictionaries[key]); }
-
+    if (configDictionaries) { Object.keys(configDictionaries).forEach(key => configs[key] = configDictionaries[key]); }
     return {
       ngModule: CoreModule,
       providers: [
         {
           provide: THEME_TOKEN,
           useValue: themes
+        },
+        {
+          provide: CONFIG_TOKEN,
+          useValue: configs
         }
       ]
     };

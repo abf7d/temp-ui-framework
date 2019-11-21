@@ -37,28 +37,28 @@ export const polusConfig: any = {
                 {
                     "id": "1",
                     "route": "/labshare",
-                    "text": "Labshare 1",
+                    "text": "Pages",
                     "click": "tenant-switch",
                     "icon": "icon-Pages"
                 },
                 {
                     "id": "2",
-                    "route": "/labshare/(right:test)",
-                    "text": "Labshare 2",
+                    "route": "polus",
+                    "text": "Polus Layout / Theme",
                     "click": "tenant-switch",
                     "icon": "icon-Polus"
                 },
                 {
                     "id": "3",
-                    "route": "polus",
-                    "text": "Polus Layout / Theme",
+                    "route": "/labshare/(right:test)",
+                    "text": "FOTS Application",
                     "click": "tenant-switch",
                     "icon": "icon-FOTSApp"
                 },
                 {
                     "id": "4",
                     "route": "/noleft",
-                    "text": "No Left Nav",
+                    "text": "Book",
                     "click": "tenant-switch",
                     "icon": "icon-Book"
                 }
@@ -67,21 +67,21 @@ export const polusConfig: any = {
                 {
                     "id": "5",
                     "route": "polus",
-                    "text": "Fifth App",
+                    "text": "Tile View",
                     "click": "tenant-admin",
                     "icon": "icon-TileView"
                 },
                 {
                     "id": "6",
                     "route": "polus",
-                    "text": "Fifth App",
+                    "text": "Pages",
                     "click": "tenant-admin",
                     "icon": "icon-Pages"
                 },
                 {
                     "id": "7",
                     "route": "polus",
-                    "text": "Fifth App",
+                    "text": "LS Storage",
                     "click": "tenant-admin",
                     "icon": "icon-LsStorageIcon"
                 },
@@ -89,14 +89,14 @@ export const polusConfig: any = {
                 {
                     "id": "8",
                     "route": "polus",
-                    "text": "Fifth App",
+                    "text": "Groups",
                     "click": "tenant-admin",
                     "icon": "icon-Groups"
                 },
                 {
                     "id": "9",
                     "route": "polus",
-                    "text": "Fifth App",
+                    "text": "Manage",
                     "click": "tenant-admin",
                     "icon": "icon-Manage"
                 }
@@ -199,7 +199,7 @@ export const labshareConfig: any = {
                 {
                     "id": "1",
                     "route": "/labshare",
-                    "text": "Labshare 1",
+                    "text": "Pages",
                     "click": "tenant-switch",
                     "icon": "icon-Pages"
                 },
@@ -213,14 +213,14 @@ export const labshareConfig: any = {
                 {
                     "id": "3",
                     "route": "/labshare/(right:test)",
-                    "text": "Labshare 2",
+                    "text": "FOTS Application",
                     "click": "tenant-switch",
                     "icon": "icon-FOTSApp"
                 },
                 {
                     "id": "4",
                     "route": "/noleft",
-                    "text": "No Left Nav",
+                    "text": "Book",
                     "click": "tenant-switch",
                     "icon": "icon-Book"
                 }
@@ -229,21 +229,21 @@ export const labshareConfig: any = {
                 {
                     "id": "5",
                     "route": "polus",
-                    "text": "Fifth App",
+                    "text": "Tile View",
                     "click": "tenant-admin",
                     "icon": "icon-TileView"
                 },
                 {
                     "id": "6",
                     "route": "polus",
-                    "text": "Fifth App",
+                    "text": "Pages",
                     "click": "tenant-admin",
                     "icon": "icon-Pages"
                 },
                 {
                     "id": "7",
                     "route": "polus",
-                    "text": "Fifth App",
+                    "text": "LS Storage",
                     "click": "tenant-admin",
                     "icon": "icon-LsStorageIcon"
                 },
@@ -251,14 +251,14 @@ export const labshareConfig: any = {
                 {
                     "id": "8",
                     "route": "polus",
-                    "text": "Fifth App",
+                    "text": "Groups",
                     "click": "tenant-admin",
                     "icon": "icon-Groups"
                 },
                 {
                     "id": "9",
                     "route": "polus",
-                    "text": "Fifth App",
+                    "text": "Manage",
                     "click": "tenant-admin",
                     "icon": "icon-Manage"
                 }

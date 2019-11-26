@@ -5,8 +5,8 @@ export const polusConfig: any = {
     class: "config",
     properties: {
         header: {
-            "logo": "fa fa-folder-o fa-2x",
-            "text": "Default Text",
+            "logo": "icon-Polus",
+            "text": "Polus",
             "leftNavList": [],
             "centerNavList": [],
             "rightNavList": [
@@ -104,21 +104,21 @@ export const polusConfig: any = {
         },
 
         leftNav: {
-            "logo": "fa fa-folder-o fa-2x",
+            "logo": "icon-LsStorageIcon",
             "text": "Selected Heirarchy",
             "menu": [
                 {
-                    "icon": "fa fa-folder-o fa-2x",
+                    "icon": "icon-Folder",
                     "router-link": "test",
                     "text": "Publication",
                     "children": [
                         {
-                            "icon": "fa fa-folder-o fa-2x",
+                            "icon": "icon-Folder",
                             "text": "Test 1",
                             "link": "https://osd.ncats.nih.gov/Shared%20Documents/PPC%20User%20Guide.pdf"
                         },
                         {
-                            "icon": "fa fa-folder-o fa-2x",
+                            "icon": "icon-Folder",
                             "text": "Test 2",
                             "link": "https://osd.ncats.nih.gov/Shared%20Documents/PPC%20User%20Guide.pdf"
                         }
@@ -126,29 +126,29 @@ export const polusConfig: any = {
                 },
                 {
 
-                    "icon": "fa fa-folder-o fa-2x",
+                    "icon": "icon-Folder",
                     "router-link": "test2",
                     "text": "Instruments & Resource",
                 },
                 {
-                    "icon": "fa fa-folder-o fa-2x",
+                    "icon": "icon-Folder",
                     "router-link": "test2",
                     "text": "Project Tracking",
 
                 },
                 {
-                    "icon": "fa fa-folder-o fa-2x",
+                    "icon": "icon-Folder",
                     "text": "Groups",
                     "link": "https://osd.ncats.nih.gov/Shared%20Documents/PPC%20User%20Guide.pdf"
 
                 },
                 {
-                    "icon": "fa fa-folder-o fa-2x",
+                    "icon": "icon-Folder",
                     "text": "Pages",
                     "link": "https://osd.ncats.nih.gov/Shared%20Documents/PPC%20User%20Guide.pdf"
                 },
                 {
-                    "icon": "fa fa-folder-o fa-2x",
+                    "icon": "icon-Folder",
                     "router-link": "test2",
                     "text": "Storage Space",
                     "link": "https://osd.ncats.nih.gov/Shared%20Documents/PPC%20User%20Guide.pdf"
@@ -267,21 +267,21 @@ export const labshareConfig: any = {
 
 
         leftNav: {
-            "logo": "fa fa-folder-o fa-2x",
+            "logo": "icon-LsStorageIcon",
             "text": "Selected Heirarchy",
             "menu": [
                 {
-                    "icon": "fa fa-folder-o fa-2x",
+                    "icon": "icon-Folder",
                     "router-link": "test",
                     "text": "Publication",
                     "children": [
                         {
-                            "icon": "fa fa-folder-o fa-2x",
+                            "icon": "icon-Folder",
                             "text": "Test 1",
                             "link": "https://osd.ncats.nih.gov/Shared%20Documents/PPC%20User%20Guide.pdf"
                         },
                         {
-                            "icon": "fa fa-folder-o fa-2x",
+                            "icon": "icon-Folder",
                             "text": "Test 2",
                             "link": "https://osd.ncats.nih.gov/Shared%20Documents/PPC%20User%20Guide.pdf"
                         }
@@ -289,36 +289,34 @@ export const labshareConfig: any = {
                 },
                 {
 
-                    "icon": "fa fa-folder-o fa-2x",
+                    "icon": "icon-Folder",
                     "router-link": "test2",
                     "text": "Instruments & Resource",
                 },
                 {
-                    "icon": "fa fa-folder-o fa-2x",
+                    "icon": "icon-Folder",
                     "router-link": "test2",
                     "text": "Project Tracking",
 
                 },
                 {
-                    "icon": "fa fa-folder-o fa-2x",
+                    "icon": "icon-Folder",
                     "text": "Groups",
                     "link": "https://osd.ncats.nih.gov/Shared%20Documents/PPC%20User%20Guide.pdf"
 
                 },
                 {
-                    "icon": "fa fa-folder-o fa-2x",
+                    "icon": "icon-Folder",
                     "text": "Pages",
                     "link": "https://osd.ncats.nih.gov/Shared%20Documents/PPC%20User%20Guide.pdf"
                 },
                 {
-                    "icon": "fa fa-folder-o fa-2x",
+                    "icon": "icon-Folder",
                     "router-link": "test2",
                     "text": "Storage Space",
                     "link": "https://osd.ncats.nih.gov/Shared%20Documents/PPC%20User%20Guide.pdf"
                 }
             ]
         }
-
-
     }
 };

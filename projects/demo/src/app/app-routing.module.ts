@@ -26,7 +26,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: LeftNavComponent, 
+        component: LeftNavListComponent, 
         outlet: 'left'
       },
       {

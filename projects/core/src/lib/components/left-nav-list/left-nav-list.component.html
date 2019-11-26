@@ -3,13 +3,13 @@
 
         <div  *ngIf="config !== null"> 
         <div class="logo">
-            <img class="logo-img" src="{{header.img}}" />
-            <div class="menu-entry-txt"> {{header.text}} </div>
+            <i class="logo-img" [className]="'' + config.logo"> </i>    
+            <div class="menu-entry-txt"> {{config.text}} </div>
         </div>
 
         <ul class="names">
-            <li *ngFor="let entry of config.group" [class.active]="entry.selected"  (click)="leafClick(entry)">
-                <div> <img src="{{entry.image}}" /> </div>
+            <li *ngFor="let entry of config.menu" [class.active]="entry.selected"  (click)="leafClick(entry)">
+                <div> <i [className]="entry.icon"></i> </div>
                 <div class="menu-entry-txt">{{entry.text}}</div>
             </li>
         </ul>

@@ -1,6 +1,7 @@
 <div class="nav-top-content" *ngIf="config !== null">
     <div>
-         <img class="logo" src="{{config.logo}}" /> 
+         <i [className]="'logo ' + config.logo"> </i> 
+         <span> {{config.text}}</span>
     </div>
     <div class="header-parent">
         <ng-container *ngTemplateOutlet="inner; context:{list:config.leftNavList}"></ng-container>

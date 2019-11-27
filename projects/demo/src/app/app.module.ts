@@ -2,11 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, APP_INITIALIZER, Injector } from '@angular/core';
 import { UsersRouting } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CoreModule, EventService, LayoutComponent, LeftNavComponent, RightNavComponent, HeaderComponent, TenantNavComponent, LeftNavListComponent } from 'temp-ls-ui-framework';
+import { ConfigAPIService, RouteService, CoreModule, EventService, LayoutComponent, LeftNavComponent, RightNavComponent, HeaderComponent, TenantNavComponent, LeftNavListComponent } from 'temp-ls-ui-framework';
 import { TestComponent } from './test/test.component';
 import { CenterHeaderComponent } from './center-header/center-header.component';
 import { LabShareComponent } from './labshare/labshare.component';
-import { ConfigAPIService, RouteService } from 'temp-ls-ui-framework';
+import {App1Module} from 'app1';
 import { Router } from '@angular/router';
 
 
@@ -43,6 +43,7 @@ const customConfigs = {
   ],
   imports: [
     CoreModule.forRoot(customThemes, customConfigs),
+    App1Module,
     BrowserModule,
     UsersRouting
   ],

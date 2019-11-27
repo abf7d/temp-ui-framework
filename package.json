@@ -29,6 +29,7 @@
     "primeng": "^8.1.1",
     "rxjs": "~6.4.0",
     "temp-ls-ui-framework": "file:dist",
+    "app1": "file:dist",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },

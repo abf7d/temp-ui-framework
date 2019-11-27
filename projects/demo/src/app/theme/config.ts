@@ -6,7 +6,7 @@ export const polusConfig: any = {
     properties: {
         header: {
             "logo": "icon-Polus",
-            "text": "Polus",
+            "text": "POLUS Imaging",
             "leftNavList": [],
             "centerNavList": [],
             "rightNavList": [
@@ -37,7 +37,7 @@ export const polusConfig: any = {
                 {
                     "id": "1",
                     "route": "/labshare",
-                    "text": "Pages",
+                    "text": "Place Holder",
                     "click": "tenant-switch",
                     "icon": "icon-Pages"
                 },
@@ -58,7 +58,7 @@ export const polusConfig: any = {
                 {
                     "id": "4",
                     "route": "/noleft",
-                    "text": "Book",
+                    "text": "Publications",
                     "click": "tenant-switch",
                     "icon": "icon-Book"
                 }
@@ -67,7 +67,7 @@ export const polusConfig: any = {
                 {
                     "id": "5",
                     "route": "polus",
-                    "text": "Tile View",
+                    "text": "Applications",
                     "click": "tenant-admin",
                     "icon": "icon-TileView"
                 },
@@ -199,7 +199,7 @@ export const labshareConfig: any = {
                 {
                     "id": "1",
                     "route": "/labshare",
-                    "text": "Pages",
+                    "text": "Place Holder",
                     "click": "tenant-switch",
                     "icon": "icon-Pages"
                 },
@@ -220,7 +220,7 @@ export const labshareConfig: any = {
                 {
                     "id": "4",
                     "route": "/noleft",
-                    "text": "Book",
+                    "text": "Publications",
                     "click": "tenant-switch",
                     "icon": "icon-Book"
                 }
@@ -229,7 +229,7 @@ export const labshareConfig: any = {
                 {
                     "id": "5",
                     "route": "polus",
-                    "text": "Tile View",
+                    "text": "Applications",
                     "click": "tenant-admin",
                     "icon": "icon-TileView"
                 },
